@@ -1,5 +1,6 @@
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import './App.css';
+import Home from './Home'
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
         <Switch>
           <Route exact path='/'>
             {/* home  Page*/}
+            <Home/>
           </Route>
           <Redirect to='/'/>
         </Switch>
