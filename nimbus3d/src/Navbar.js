@@ -10,7 +10,7 @@ function Navbar(){
     return (
     <AppBar position="static">
       <Toolbar>
-        <Container maxWidth='fluid' className='navbarContainer'>
+        <Container maxWidth={false} className='navbarContainer'>
           <IconButton edge="start" color="inherit" aria-label="home">
             <img src={logo} alt='logo' className='logo-img'></img>
             <h1>Nimbus 3D</h1>

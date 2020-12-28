@@ -1,8 +1,7 @@
-const INITIAL_STATE = {}
+import { combineReducers } from "redux";
 
-function rootReducer(state = INITIAL_STATE, action){
+import users from './users'
 
-
-}
-
-export default rootReducer;
+export default combineReducers({
+    users
+  });
