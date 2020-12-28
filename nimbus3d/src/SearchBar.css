@@ -1,0 +1,28 @@
+.searchIcon{
+    /* padding: theme.spacing(0, 2); */
+    height: '100%';
+    position: 'absolute';
+    pointer-events: 'none';
+    display: 'flex';
+    align-items: 'center';
+    justify-content: 'center';
+    padding-right: 0.5rem;
+}
+
+.search{
+    display: flex;
+    position: 'relative';
+    border-radius: 3rem;
+    background-color: rgba(5, 0, 73, 0.281);
+    padding: 0.7rem;
+    width: 25rem;
+    color: white !important
+}
+
+.search:hover{
+    background-color: rgba(5, 0, 73, 0.644);
+}
+
+.searchInput{
+    color: inherit !important;
+}

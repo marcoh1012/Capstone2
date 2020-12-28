@@ -1,0 +1,18 @@
+.logo-img{
+    height: 8rem;
+}
+.navLinks {
+    display: flex;
+    justify-content: space-between;
+}
+.navbarContainer{
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.link{
+    text-decoration: none !important;
+    text-transform: uppercase;
+    color: white !important;
+}
