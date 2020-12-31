@@ -1,6 +1,6 @@
-import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
+import { BrowserRouter} from 'react-router-dom';
 import './App.css';
-import Home from './Home'
+import Routes from './Routes'
 import Navbar from './Navbar'
 
 function App() {
@@ -8,14 +8,8 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Navbar/>
-        <Switch>
-          <Route exact path='/'>
-            {/* home  Page*/}
-            <Home/>
-          </Route>
-          <Redirect to='/'/>
-        </Switch>
-      </div>
+        <Routes/>
+      </div>  
     </BrowserRouter>
   );
 }

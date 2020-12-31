@@ -1,29 +1,29 @@
-import React from 'react'
-import { useDispatch } from 'react-redux';
-import OAuth2Login from 'react-simple-oauth2-login';
-import {authURL, clientID,} from './config'
-import { LogIn } from "./actions/user";
- 
+import React from 'react';
+import LoginButton from './LoginButton'
+import logo from './pics/nimbus.png'
 
+import './Login.css'
 
 function Login(){
-const dispatch = useDispatch();
 
-const onSuccess = response => logIn(response.access_token);
-const onFailure = response => console.error(response);
+    return (
+        <div className='login-page'>
+            <div className='login-box'>
+                <div className="login-main">
+                    <p>
+                        Welcome To Nimbus 3D!
+                    </p>
+                    <img src={logo} alt='logo' className='login-logo-img'></img>
+                    <p>
+                        Log In using a MakerBot or Google Account to begin.
+                    </p>
+                    <LoginButton/>
+                </div>
+                <p className='login-credits'>Powered By: <a href="https://thingiverse.com" >Thingiverse</a></p>
+            </div>
 
-function logIn(token) {
-    dispatch(LogIn(token))
-}
-
-    return(<OAuth2Login
-        authorizationUrl={authURL}
-        responseType="token"
-        clientId={clientID}
-        redirectUri="http://localhost:3000/"
-        onSuccess={onSuccess}
-        onFailure={onFailure}
-    />)
+        </div>
+    )
 }
 
 export default Login
