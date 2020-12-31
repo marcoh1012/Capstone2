@@ -1,24 +1,32 @@
 import React from 'react'
-import Login from './Login'
 import Logout from './Logout'
 import { useSelector, useDispatch } from 'react-redux';
+import { CircularProgress } from '@material-ui/core';
+import { get_things } from "./actions/thing";
+import { useEffect } from 'react';
+import ModelList from './ModelList'
 
 
 function Home(){
-    const loggedIn = useSelector(st => st.users['access_token'] !== undefined);
-    
+    const dispatch = useDispatch()
+    let loaded = useSelector(st => st.things[0] !== undefined)
+    let things = useSelector(st => st.things)
 
-    console.log(loggedIn)
-    if(!loggedIn){
+    useEffect(function(){
+        dispatch(get_things())
+    },[dispatch])
+    
+    
+    if(!loaded){
         return(
-            <>
-            <Login/>
-            </>
+            <CircularProgress/>
         )
     }
+    
     return (
        <>
         <h3>Logged In</h3>
+        <ModelList things={things}/>
         <Logout/>
         </>
     )

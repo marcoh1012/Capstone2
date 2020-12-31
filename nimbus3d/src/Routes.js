@@ -4,6 +4,7 @@ import Home from './Home'
 import { useSelector } from "react-redux";
 import Login  from "./Login";
 
+
 function Routes(){
     const loggedIn = useSelector(st => st.users['access_token'] !== undefined);
     return(
@@ -12,7 +13,7 @@ function Routes(){
           {loggedIn ? <Home/> : <Login/>}
         </Route>
         <Route exact path='/categories'>
-
+          
         </Route>
         <Route exact path='/featured'>
 
