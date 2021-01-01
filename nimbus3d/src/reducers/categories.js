@@ -10,9 +10,6 @@ function categories(state = INITIAL_STATE, action) {
             ...action.payload
     ];
   
-    //   case LOG_OUT:
-    //     return { ...INITIAL_STATE };
-  
       default:
         return state;
     }

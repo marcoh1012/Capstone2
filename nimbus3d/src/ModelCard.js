@@ -3,8 +3,9 @@ import Card from '@material-ui/core/Card';
 import React from 'react';
 
 import './ModelCard.css'
-import { CardContent, CardHeader } from '@material-ui/core';
+import { Button, CardContent, CardHeader } from '@material-ui/core';
 import { useState } from 'react';
+import FavoriteBorderIcon  from '@material-ui/icons/FavoriteBorder';
 
 function ModelCard({thing}){
     console.log(thing)
@@ -20,12 +21,15 @@ function ModelCard({thing}){
 
     return(
         <Card className='model-card' onMouseEnter={handleHover} onMouseLeave={handleHoverClose} >
+            <div className="model-card-icons"><Button className='favorite-button'><FavoriteBorderIcon/></Button><p className="num-likes">{thing.like_count}</p></div>
             <CardMedia className='model-card-img' component='img' image={thing.preview_image}/>
-            <CardContent clannName="model-card-content" style={{display: hover}}>
+            <CardContent className="model-card-content model-title" style={{display: hover}}>
                 <h3>{thing.name}</h3>
             </CardContent>
+            
         </Card>
     )
+
 }
 
 export default ModelCard

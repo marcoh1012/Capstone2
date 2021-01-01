@@ -6,9 +6,14 @@ function featured(state = INITIAL_STATE, action) {
     switch (action.type) {
       case GET_FEATURED:
           console.log(action.payload)
-        return [
+
+          if(action.payload.hits.length === 0){
+            return []
+          }
+
+          return [
             ...action.payload.hits
-    ];
+          ];
   
   
       default:

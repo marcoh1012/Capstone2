@@ -22,6 +22,12 @@ function Featured(){
             <CircularProgress/>
         )
     }
+
+    if(things.length === 0){
+        return(
+            <p>No Featured Items Found!</p>
+        )
+    }
     
     return (
        <>

@@ -13,12 +13,38 @@
     border-radius: 1rem !important;
     border: 2px black solid;
     padding: 0.3rem;
+    position: relative;
 }
 
 .model-card-content{
     position: absolute;
-    max-width: 100%;
-    z-index: 1;
-    left:5px;
-    border: red 2px solid;
+    background-color: rgba(128, 128, 128, 0.25) !important;
+    border-top: 4px rgba(0, 0, 0, 0.425) solid !important;
+    z-index: 100;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: white;
+}
+
+.model-card-icons{
+    position: absolute !important;
+    top: 0 !important;
+    right: 0;
+    z-index: 100 !important;
+    margin-top: 1rem;
+    
+}
+
+.favorite-button{
+    color: rgb(99, 99, 99) !important;
+    font-size: 5rem !important;
+    margin-bottom: 0 !important;
+}
+
+.num-likes{
+    padding: 0 !important;
+    font-size: larger;
+    font-weight: bolder;
+    color: purple;
 }
