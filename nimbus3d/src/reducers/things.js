@@ -8,10 +8,7 @@ function things(state = INITIAL_STATE, action) {
         return [
             ...action.payload
     ];
-  
-    //   case LOG_OUT:
-    //     return { ...INITIAL_STATE };
-  
+
       default:
         return state;
     }

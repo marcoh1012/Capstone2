@@ -45,6 +45,11 @@ class ThingiverseApi {
       return res
     }
 
+    static async getLikes(){
+      let res = await this.request(`users/marcoh1012/likes`)
+      return res
+    }
+
     // static async searchCompanies(name){
     //   let res = await this.request(`companies`, {name})
     //   return res.companies
