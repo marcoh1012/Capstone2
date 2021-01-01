@@ -2,18 +2,18 @@ import React from 'react'
 import Logout from './Logout'
 import { useSelector, useDispatch } from 'react-redux';
 import { CircularProgress } from '@material-ui/core';
-import { get_categories } from "./actions/category";
+import { get_featured } from "./actions/featured";
 import { useEffect } from 'react';
-import CategoryList from './CategoryList'
+import ModelList from './ModelList'
 
 
-function Home(){
+function Featured(){
     const dispatch = useDispatch()
-    let loaded = useSelector(st => st.categories[0] !== undefined)
-    let categories = useSelector(st => st.categories)
+    let loaded = useSelector(st => st.featured[0] !== undefined)
+    let things = useSelector(st => st.featured)
 
     useEffect(function(){
-        dispatch(get_categories())
+        dispatch(get_featured())
     },[dispatch])
     
     
@@ -25,12 +25,12 @@ function Home(){
     
     return (
        <>
-        <h3>Categories</h3>
-        <CategoryList categories={categories}/>
+        <h2>Featured</h2>
+        <ModelList things={things}/>
         <Logout/>
         </>
     )
 
 }
 
-export default Home
+export default Featured

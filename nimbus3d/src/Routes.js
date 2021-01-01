@@ -2,6 +2,7 @@ import React from 'react';
 import {Switch, Route, Redirect} from 'react-router-dom'
 import Home from './Home'
 import Categories from './Categories'
+import Featured from "./Featured";
 import { useSelector } from "react-redux";
 import Login  from "./Login";
 
@@ -14,10 +15,10 @@ function Routes(){
           {loggedIn ? <Home/> : <Login/>}
         </Route>
         <Route exact path='/categories'>
-        {loggedIn ? <Categories/> : <Login/>}
+          {loggedIn ? <Categories/> : <Login/>}
         </Route>
         <Route exact path='/featured'>
-
+          {loggedIn ? <Featured/> : <Login/>}
         </Route>
         <Route exact path='/likes'>
 

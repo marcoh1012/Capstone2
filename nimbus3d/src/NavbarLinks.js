@@ -4,7 +4,7 @@ import {List, ListItemText, ListItem} from '@material-ui/core'
 const navLinks =[
     {title:'Home', path:'/'},
     {title:'Categories', path:'/categories'},
-    {title:'Featured', path:'/random'},
+    {title:'Featured', path:'/featured'},
     {title:'Likes', path:'/likes'},
     {title:'Account', path:'/account'}
 ]

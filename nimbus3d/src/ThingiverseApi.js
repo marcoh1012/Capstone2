@@ -40,6 +40,11 @@ class ThingiverseApi {
       return res
     }
 
+    static async getFeatured(){
+      let res = await this.request('search',{"is_featured":1})
+      return res
+    }
+
     // static async searchCompanies(name){
     //   let res = await this.request(`companies`, {name})
     //   return res.companies
