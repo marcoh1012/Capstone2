@@ -9,7 +9,7 @@ function ModelList({things}){
     return(
         <div className='model-list'>
             {things.map(thing => (
-                <Link to='/model'>
+                <Link to={`/model/${thing.id}`}>
                     <ModelCard key={thing.id} thing={thing}/>
                 </Link>
                 

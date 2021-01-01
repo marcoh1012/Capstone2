@@ -1,10 +1,11 @@
-import { GET_THINGS } from "../actions/types";
+import { GET_CATEGORIES } from "../actions/types";
 
 const INITIAL_STATE = [];
 
-function things(state = INITIAL_STATE, action) {
+function categories(state = INITIAL_STATE, action) {
     switch (action.type) {
-      case GET_THINGS:
+      case GET_CATEGORIES:
+          console.log(action.payload)
         return [
             ...action.payload
     ];
@@ -17,4 +18,4 @@ function things(state = INITIAL_STATE, action) {
     }
   }
   
-  export default things;
+  export default categories;
