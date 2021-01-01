@@ -50,62 +50,10 @@ class ThingiverseApi {
       return res
     }
 
-    // static async searchCompanies(name){
-    //   let res = await this.request(`companies`, {name})
-    //   return res.companies
-    // }
-
-    // static async searchJobs(title){
-    //   let res = await this.request(`jobs`, {title})
-    //   return res.jobs
-    // }
-
-  
-    // static async get(type, handle) {
-    //   let res = await this.request(`${type}/${handle}`);
-    //   return res.company;
-    // }
-
-
-    // static async logIn(data){
-    //     let res = await this.request('auth/token', data, 'post')
-    //     localStorage.setItem('_token', res.token)
-    //     return res.token
-    // }
-
-
-    // static async register(data){
-    //   let res = await this.request('auth/register', data, 'post')
-    //   localStorage.setItem('_token', res.token)
-    //   return res.token
-    // }
-
-    // static logout(){
-    //   localStorage.removeItem('_token')
-    // }
-
-    // static async getUser(username){
-    //   let res = await this.request(`users/${username}`)
-    //   return res.user
-    // }
-
-    // static async update(username, data){
-    //   let res = await this.request(`users/${username}`, data, 'patch')
-     
-    //   return res.user
-    // }
-
-    // static async apply(username, id){
-    //   let res = await this.request(`users/${username}/jobs/${id}`,{}, "post");
-    //   return res;
-
-    // }
-
-    // static async getAppliedJobs(username){
-    //   let res = await this.request(`users/${username}`)
-    //   return res.user.applications
-
-    // }
+    static async getModel(id){
+      let res = await this.request(`things/${id}`)
+      return res
+    }
   }
 
   export default ThingiverseApi

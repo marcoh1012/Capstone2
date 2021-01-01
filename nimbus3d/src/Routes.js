@@ -4,6 +4,7 @@ import Home from './Home'
 import Categories from './Categories'
 import Featured from "./Featured";
 import Liked from "./Liked"
+import ModelPage from "./ModelPage"
 import { useSelector } from "react-redux";
 import Login  from "./Login";
 
@@ -28,7 +29,7 @@ function Routes(){
             
         </Route>
         <Route path='/model/:id'>
-
+          {loggedIn ? <ModelPage/> : <Login/>}
         </Route>
         <Redirect to='/'/>
     </Switch>
