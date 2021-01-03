@@ -1,4 +1,5 @@
-import {GET_LIKED, LOG_IN, LOG_OUT} from "../actions/types";
+import {GET_LIKED, LIKE_MODEL, LOG_IN, LOG_OUT} from "../actions/types";
+
 
 const INITIAL_STATE = {};
 
@@ -12,11 +13,16 @@ function users(state = INITIAL_STATE, action) {
       case LOG_OUT:
         return { ...INITIAL_STATE };
 
-        case GET_LIKED:
+      case GET_LIKED:
           return{...state,
           'liked': action.payload
-        }
-  
+        };
+      
+      case LIKE_MODEL:
+          return {...state, 'liked': [
+            ...state.liked, {...action.payload}
+          ]};
+
       default:
         return state;
     }

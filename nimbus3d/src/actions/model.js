@@ -1,4 +1,4 @@
-import { GET_MODEL } from "./types";
+import { GET_MODEL, LIKE_MODEL } from "./types";
 import ThingiverseApi from "../ThingiverseApi"
 
 function get_model(id) {
@@ -9,8 +9,22 @@ function get_model(id) {
 
   }
 
+function like_model(thing){
+  return async function (dispatch) {
+    const res = await ThingiverseApi.likeModel(thing.id);
+    console.log(res)
+    dispatch(liked_model(thing))
+    
+  }
+}
+
 function got_model(data){
   return { type: GET_MODEL, payload: data }
 }
 
-export {get_model}
+function liked_model(thing) {
+  return {type: LIKE_MODEL, payload: thing}
+  
+}
+
+export {get_model, like_model}

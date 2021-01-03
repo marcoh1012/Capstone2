@@ -54,6 +54,18 @@ class ThingiverseApi {
       let res = await this.request(`things/${id}`)
       return res
     }
+
+    static async likeModel(id){
+      //add like to model
+      let res = await this.request(`things/${id}/likes`,{}, 'post')
+      return res
+    }
+
+    static async unlikeModel(id){
+      //unlike a model that was already liked.
+      let res = await this.request(`things/${id}/likes`, {},'delete')
+      return res
+    }
   }
 
   export default ThingiverseApi
