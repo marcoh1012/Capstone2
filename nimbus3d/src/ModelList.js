@@ -10,7 +10,6 @@ import ModelCard from './ModelCard'
 function ModelList({things}){
     const dispatch = useDispatch()
     let liked = useSelector(st => st.users.liked)
-    console.log(liked)
 
     useEffect(function(){
         dispatch(get_liked);

@@ -1,3 +1,21 @@
 .modelPage{
     border: 2px black solid;
 }
+
+.summary{
+    text-align: left;
+}
+
+.action_buttons{
+    text-align: center;
+    display: flex;
+    font-size: 2rem;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    padding-top: 1rem;
+}
+.action_buttons div{
+    margin-right:2rem;
+    border: solid 2px gray;
+}

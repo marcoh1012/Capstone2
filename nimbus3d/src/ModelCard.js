@@ -37,7 +37,6 @@ function ModelCard({thing,liked}){
     const handleFavorite = () => {
         if(liked) dispatch(unlike_model(thing))
         else dispatch(like_model(thing))
-
     }
 
 
