@@ -2,7 +2,7 @@ import { Button, CircularProgress, Container } from '@material-ui/core';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { get_model } from './actions/model';
+import { get_files, get_model } from './actions/model';
 import FavoriteBorderIcon  from '@material-ui/icons/FavoriteBorder';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import {like_model, unlike_model} from './actions/model'
@@ -11,6 +11,7 @@ import FileCopyIcon from '@material-ui/icons/FileCopy';
 import ChatBubbleIcon from '@material-ui/icons/ChatBubble';
 import LinkIcon from '@material-ui/icons/Link';
 import Carousel from './Carousel'
+import DownloadFiles from "./model_page/DownloadFiles";
 
 import './ModelPage.css'
 import { get_liked } from './actions/user';
@@ -18,9 +19,12 @@ import { get_liked } from './actions/user';
 function ModelPage(){
     const params = useParams();
     const dispatch = useDispatch();
+    const id = params.id
 
     let loaded = useSelector(st => st.models[params.id] !== undefined)
     let model = useSelector(st => st.models[params.id])
+    
+   
     useEffect(function(){
         dispatch(get_liked())
         dispatch(get_model(params.id))
@@ -38,7 +42,6 @@ function ModelPage(){
             <CircularProgress/>
         )
     }
-    console.log(model)
     return (
         <Container className="modelPage">
             <h1>{model.name}</h1>
@@ -68,6 +71,7 @@ function ModelPage(){
             <div className='files'>
                 <h1>Files</h1>
                 {/* All downloadable files will go here */}
+                <DownloadFiles id={id}/>
             </div>
             <div className="comments">
                 <h1>Comments</h1>

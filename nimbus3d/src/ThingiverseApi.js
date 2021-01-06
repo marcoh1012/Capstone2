@@ -79,6 +79,12 @@ class ThingiverseApi {
       let res = await this.request(`things/${id}/likes`, {},'delete')
       return res
     }
+
+    static async getFiles(id){
+      //get all files from the model
+      let res = await this.request(`things/${id}/files`)
+      return res
+    }
   }
 
   export default ThingiverseApi
