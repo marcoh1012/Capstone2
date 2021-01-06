@@ -3,7 +3,7 @@ import ThingiverseApi from "../ThingiverseApi"
 
 function get_categories() {
     return async function (dispatch){
-        const res = await ThingiverseApi.getAll('categories');
+        const res = await ThingiverseApi.getCategories();
         dispatch(got_categories(res))
     }
 

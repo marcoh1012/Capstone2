@@ -6,7 +6,7 @@ function things(state = INITIAL_STATE, action) {
     switch (action.type) {
       case GET_THINGS:
         return [
-            ...action.payload
+            ...action.payload.hits
     ];
 
       default:

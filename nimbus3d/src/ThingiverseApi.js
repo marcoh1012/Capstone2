@@ -35,8 +35,21 @@ class ThingiverseApi {
       }
     }
 
-    static async getAll(handle){
-      let res = await this.request(handle)
+    static async getAll(handle,days=7){
+      let res = await this.request('search',{
+        page:1,
+        per_page:30,
+        sort: 'popular',
+        posted_after: `now-${days}d`,
+        type: 'thing'
+      })
+      console.log(res)
+      return res
+      // https://www.thingiverse.com/search?page=2&per_page=20&sort=popular&posted_after=now-30d&type=things&q=
+    }
+
+    static async getCategories(){
+      let res = await this.request('categories')
       return res
     }
 
