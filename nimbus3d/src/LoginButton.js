@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch } from 'react-redux';
 import OAuth2Login from 'react-simple-oauth2-login';
 import {authURL, clientID,} from './config'
-import { LogIn } from "./actions/user";
+import { LogIn } from "./actions/auth";
 
 import './LoginButton.css'
  

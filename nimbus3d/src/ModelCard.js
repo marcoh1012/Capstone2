@@ -8,12 +8,13 @@ import { useState } from 'react';
 import FavoriteBorderIcon  from '@material-ui/icons/FavoriteBorder';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import { useDispatch, useSelector } from 'react-redux';
-import {like_model} from './actions/model'
+import {like_model, unlike_model} from './actions/model'
+import { Link } from 'react-router-dom';
 
 function ModelCard({thing,liked}){
     // console.log(thing)
     const dispatch = useDispatch()
-    console.log(liked)
+    // console.log(thing)
  
     let button;
     if(liked){
@@ -34,21 +35,21 @@ function ModelCard({thing,liked}){
     }
 
     const handleFavorite = () => {
-        if(liked) alert('unlike')
+        if(liked) dispatch(unlike_model(thing))
         else dispatch(like_model(thing))
 
     }
-
-    
 
 
     return(
         <Card className='model-card' onMouseEnter={handleHover} onMouseLeave={handleHoverClose} >
             <div className="model-card-icons"><Button className='favorite-button' onClick={handleFavorite}>{button}</Button><p className="num-likes">{thing.like_count}</p></div>
+            <Link to={`/model/${thing.id}`}>
             <CardMedia className='model-card-img' component='img' image={thing.preview_image}/>
             <CardContent className="model-card-content model-title" style={{display: hover}}>
                 <h3>{thing.name}</h3>
             </CardContent>
+            </Link>
             
         </Card>
     )

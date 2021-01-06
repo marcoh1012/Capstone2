@@ -4,16 +4,18 @@ import { useSelector, useDispatch } from 'react-redux';
 import { CircularProgress } from '@material-ui/core';
 import { get_featured } from "./actions/featured";
 import { useEffect } from 'react';
+import { get_liked } from './actions/user'
 import ModelList from './ModelList'
 
 
 function Featured(){
     const dispatch = useDispatch()
-    let loaded = useSelector(st => st.featured[0] !== undefined)
+    let loaded = useSelector(st => st.featured[0] !== undefined && st.users.liked !==undefined )
     let things = useSelector(st => st.featured)
 
     useEffect(function(){
         dispatch(get_featured())
+        dispatch(get_liked());
     },[dispatch])
     
     

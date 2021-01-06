@@ -5,8 +5,10 @@ import things from './things';
 import categories from './categories'
 import featured from './featured'
 import models from './models'
+import auth from './auth'
 
 export default combineReducers({
+    auth,
     users,
     things,
     categories,

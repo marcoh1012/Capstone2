@@ -10,7 +10,7 @@ import Login  from "./Login";
 
 
 function Routes(){
-    const loggedIn = useSelector(st => st.users['access_token'] !== undefined);
+    const loggedIn = useSelector(st => st.auth['access_token'] !== undefined);
     return(
     <Switch>
         <Route exact path='/'> 

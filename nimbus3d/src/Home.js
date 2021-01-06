@@ -10,7 +10,7 @@ import ModelList from './ModelList'
 
 function Home(){
     const dispatch = useDispatch()
-    let loaded = useSelector(st => st.things[0] !== undefined)
+    let loaded = useSelector(st => st.things[0] !== undefined && st.users.liked !==undefined )
     let things = useSelector(st => st.things)
 
 

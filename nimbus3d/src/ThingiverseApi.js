@@ -4,8 +4,8 @@ const BASE_URL = "https://api.thingiverse.com"
 
 class ThingiverseApi {
     static async request(endpoint, paramsOrData = {}, verb = "get") {
-      let users = JSON.parse(window.localStorage.getItem('persist:root')).users
-      let access_token = JSON.parse(users).access_token
+      let auth = JSON.parse(window.localStorage.getItem('persist:root')).auth
+      let access_token = JSON.parse(auth).access_token
       
     // paramsOrData._token = token
 

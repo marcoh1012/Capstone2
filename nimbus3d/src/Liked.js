@@ -1,18 +1,18 @@
 import React from 'react'
 import Logout from './Logout'
-import { useSelector } from 'react-redux';
-// import { get_liked } from "./actions/user";
-// import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { get_liked } from "./actions/user";
+import { useEffect } from 'react';
 import ModelList from './ModelList'
 
 
 function Featured(){
-    // const dispatch = useDispatch()
+    const dispatch = useDispatch()
     let things = useSelector(st => st.users.liked)
 
-    // useEffect(function(){
-    //     dispatch(get_liked())
-    // },[dispatch])
+    useEffect(function(){
+        dispatch(get_liked())
+    },[dispatch])
     
     
     if(things === undefined){
