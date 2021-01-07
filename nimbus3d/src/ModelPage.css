@@ -19,3 +19,11 @@
     margin-right:2rem;
     border: solid 2px gray;
 }
+
+.files{
+    width: 100%;
+    justify-content: center !important;
+    align-items: center;
+    text-align: center;
+    border: black 2px solid;
+}

@@ -2,7 +2,7 @@ import { Button, CircularProgress, Container } from '@material-ui/core';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { get_files, get_model } from './actions/model';
+import { get_model } from './actions/model';
 import FavoriteBorderIcon  from '@material-ui/icons/FavoriteBorder';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import {like_model, unlike_model} from './actions/model'
@@ -15,6 +15,8 @@ import DownloadFiles from "./model_page/DownloadFiles";
 
 import './ModelPage.css'
 import { get_liked } from './actions/user';
+import Comments from './model_page/Comments';
+import { CopyToClipboard } from "react-copy-to-clipboard";
 
 function ModelPage(){
     const params = useParams();
@@ -52,11 +54,13 @@ function ModelPage(){
             </div>
             <div className='action_buttons'>
                 <div><Button className='favorite-button' onClick={handleFavorite}><FavoriteIcon/></Button>{model.like_count}</div>
-                <div><Button className='download-all'><GetAppIcon/></Button></div>
-                <div><Button className='view-all-files'><FileCopyIcon/></Button></div>
-                <div><Button className='comment-icon'><ChatBubbleIcon/></Button></div>
-                <div><Button className='copy-link-icon'><LinkIcon/></Button></div>
-                <div><Button className='copy-link-icon'>VIEW MORE</Button></div>
+                <div><Button className='download-all' title="Download All"><GetAppIcon/></Button></div>
+                <div><Button className='view-all-files' title="Files" href="#files"><FileCopyIcon/></Button></div>
+                <div><Button className='comment-icon' title='Comments' href="#comments"><ChatBubbleIcon/></Button></div>
+                <div><CopyToClipboard text={`localhost:3000/model/${model.id}`}>
+                     <Button className='copy-link-icon' title="Copy-Link"><LinkIcon/></Button>
+                     </CopyToClipboard></div>
+                <div><Button className='view-more-icon' title="View More">VIEW MORE</Button></div>
             </div>
             <div className='summary'>
                 {/* <h3>
@@ -68,13 +72,16 @@ function ModelPage(){
                 </h3> */}
                 <div dangerouslySetInnerHTML={{__html: model.details}}></div>
 
-            <div className='files'>
-                <h1>Files</h1>
+            <div className='files' id='files'>
+                <h1>Files </h1>
+                <Button variant='outline-primary'>Download All</Button>
                 {/* All downloadable files will go here */}
                 <DownloadFiles id={id}/>
+                
             </div>
-            <div className="comments">
+            <div className="comments" id='comments'>
                 <h1>Comments</h1>
+                <Comments id={id}/>
             </div>
             </div>
            

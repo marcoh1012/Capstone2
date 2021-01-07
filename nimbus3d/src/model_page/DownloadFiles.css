@@ -1,0 +1,13 @@
+.MuiCard-root{
+    display: flex !important;
+    width: 50%;
+    justify-content: space-between;
+    align-items: center;
+    border: blue 2px solid;
+    margin-left: 25%;
+    margin-bottom: 2rem;
+}
+.download-file-image{
+    width: 120px;
+    height: 120px;
+}
