@@ -22,7 +22,7 @@ function DownloadFiles({id}){
 
     return (
         <div>{files.map(file => (
-            <Card><CardMedia className="download-file-image" image={file.thumbnail}/><p>{file.name}</p><Button href={`${file.download_url}?access_token=${access_token}`}><CloudDownloadIcon/></Button></Card>
+            <Card className='download-file-card'><CardMedia className="download-file-image" image={file.thumbnail}/><p>{file.name}</p><Button href={`${file.download_url}?access_token=${access_token}`}><CloudDownloadIcon/></Button></Card>
         ))}</div>
     )
 
