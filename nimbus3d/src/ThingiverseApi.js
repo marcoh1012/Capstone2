@@ -85,6 +85,12 @@ class ThingiverseApi {
       let res = await this.request(`things/${id}/files`)
       return res
     }
+
+    static async getComments(id){
+      //get all comments from model
+      let res = await this.request(`things/${id}/comments`)
+      return res
+    }
   }
 
   export default ThingiverseApi

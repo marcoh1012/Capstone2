@@ -11,4 +11,6 @@ export const GET_MODEL = "GET_MODEL"
 export const LIKE_MODEL = "LIKE_MODEL"
 export const UNLIKE_MODEL = "UNLIKE_MODEL"
 export const GET_FILES = "GET_FILES"
+export const GET_COMMENTS = "GET_COMMENTS"
+export const POST_COMMENT = "POST_COMMENT"
 

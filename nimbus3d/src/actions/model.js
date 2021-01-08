@@ -1,4 +1,4 @@
-import { GET_FILES, GET_MODEL, LIKE_MODEL, UNLIKE_MODEL } from "./types";
+import { GET_COMMENTS, GET_FILES, GET_MODEL, LIKE_MODEL, POST_COMMENT, UNLIKE_MODEL } from "./types";
 import ThingiverseApi from "../ThingiverseApi"
 
 function get_model(id) {
@@ -37,6 +37,17 @@ function get_files(id) {
   
 }
 
+//get all comments from the model
+function get_comments(id) {
+  return async function(dispatch){
+    const res = await ThingiverseApi.getComments(id)
+    console.log(res)
+    dispatch(got_comments(res))
+  }
+  
+}
+
+
 
 function got_model(data){
   return { type: GET_MODEL, payload: data }
@@ -55,4 +66,12 @@ function got_files(files){
   return {type: GET_FILES, payload: files}
 }
 
-export {get_model, like_model, unlike_model, get_files}
+function got_comments(comments){
+    return {type: GET_COMMENTS, payload: comments}
+}
+
+function posted_comment(comment){
+    return {type: POST_COMMENT, payload: comment}
+}
+
+export {get_model, like_model, unlike_model, get_files, get_comments}
