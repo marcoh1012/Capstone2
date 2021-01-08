@@ -1,7 +1,5 @@
-import { ListItemSecondaryAction } from '@material-ui/core';
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import { get_liked } from './actions/user';
 import ModelCard from './ModelCard'
 
@@ -9,7 +7,6 @@ import ModelCard from './ModelCard'
 
 function ModelList({things}){
     const dispatch = useDispatch()
-    // let liked = useSelector(st => st.users.liked)
 
     useEffect(function(){
         dispatch(get_liked);

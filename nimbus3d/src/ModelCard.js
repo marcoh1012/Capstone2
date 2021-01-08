@@ -3,20 +3,12 @@ import Card from '@material-ui/core/Card';
 import React from 'react';
 
 import './ModelCard.css'
-import { Button, CardContent, CardHeader } from '@material-ui/core';
+import {  CardContent} from '@material-ui/core';
 import { useState } from 'react';
-import FavoriteBorderIcon  from '@material-ui/icons/FavoriteBorder';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import { useDispatch, useSelector } from 'react-redux';
-import {like_model, unlike_model} from './actions/model'
-import { Link } from 'react-router-dom';
 import LikeButton from './LikeButton';
-import { ThumbUpOutlined } from '@material-ui/icons';
+import { Link } from 'react-router-dom';
 
 function ModelCard({thing}){
-    // console.log(thing)
-    const dispatch = useDispatch()
-    // console.log(thing)
 
     const [hover, setHover]= useState('none');
 

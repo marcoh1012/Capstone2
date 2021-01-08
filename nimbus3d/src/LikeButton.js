@@ -1,10 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import FavoriteBorderIcon  from '@material-ui/icons/FavoriteBorder';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import { Button } from '@material-ui/core';
 import { like_model, unlike_model } from './actions/model';
-import { get_liked } from './actions/user';
 
 
 //Like Button that keeps track of likes for models and displays appropriate icon.
