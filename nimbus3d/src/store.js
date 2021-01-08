@@ -8,7 +8,7 @@ import { createStore, applyMiddleware } from "redux";
 
 const persistConfig = {
   key: "root",
-  blacklist:['things', 'categories', 'featured', 'models','users'],
+  blacklist:['things', 'categories', 'featured', 'models'],
   storage
 };
 

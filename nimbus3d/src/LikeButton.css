@@ -1,0 +1,10 @@
+.numLikes{
+    font-size: 1rem;
+    border: none !important;
+}
+
+.favorite-button{
+    text-align: center;
+    align-items: center;
+    justify-items: center;
+}

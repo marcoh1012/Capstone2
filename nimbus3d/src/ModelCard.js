@@ -23,7 +23,7 @@ function ModelCard({thing}){
 
     return(
         <Card className='model-card' onMouseEnter={handleHover} onMouseLeave={handleHoverClose} >
-            <div className="model-card-icons"><LikeButton thing={thing}/><p className="num-likes">{thing.like_count}</p></div>
+            <div className="model-card-icons"><LikeButton thing={thing}/><p className="num-likes"></p></div>
             <Link to={`/model/${thing.id}`}>
             <CardMedia className='model-card-img' component='img' image={thing.preview_image}/>
             <CardContent className="model-card-content model-title" style={{display: hover}}>

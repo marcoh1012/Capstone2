@@ -17,6 +17,7 @@ import './ModelPage.css'
 import { get_liked } from './actions/user';
 import Comments from './model_page/Comments';
 import { CopyToClipboard } from "react-copy-to-clipboard";
+import LikeButton from './LikeButton';
 
 function ModelPage(){
     const params = useParams();
@@ -33,11 +34,6 @@ function ModelPage(){
 
     },[params.id, dispatch])
     
-    const handleFavorite = () => {
-        // if(liked) dispatch(unlike_model(model))
-        // else dispatch(like_model(model))
-
-    }
     
     if(!loaded){
         return(
@@ -53,7 +49,7 @@ function ModelPage(){
                 <Carousel img={model.thumbnail}/>
             </div>
             <div className='action_buttons'>
-                <div><Button className='favorite-button' onClick={handleFavorite}><FavoriteIcon/></Button>{model.like_count}</div>
+                <div className='likes-button'><LikeButton thing={model}/></div>
                 <div><Button className='download-all' title="Download All"><GetAppIcon/></Button></div>
                 <div><Button className='view-all-files' title="Files" href="#files"><FileCopyIcon/></Button></div>
                 <div><Button className='comment-icon' title='Comments' href="#comments"><ChatBubbleIcon/></Button></div>
