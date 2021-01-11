@@ -1,7 +1,10 @@
+import { Card, CardHeader, CardContent, Avatar } from '@material-ui/core';
 import React from 'react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { get_comments } from '../actions/model';
+
+import './Comments.css'
 
 function Comments({id}){
     const dispatch = useDispatch();
@@ -16,7 +19,15 @@ function Comments({id}){
     return (
         <div className="model-comments">
             {comments.map(comment => (
-                <div>{comment.body}</div>
+                <Card className='CommentCard'>
+                    <CardHeader avatar={
+                    <Avatar aria-label="recipe" className="comment-avatar">
+                        <img src={comment.user.thumbnail} alt="U"/>
+                    </Avatar>
+                    } title={comment.user.name}
+                    subheader={comment.added}/>
+                    <CardContent className="comment-content" dangerouslySetInnerHTML={{__html: comment.body_html}}></CardContent>
+                </Card>
             ))}
         </div>
     )

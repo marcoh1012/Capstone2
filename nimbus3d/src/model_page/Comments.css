@@ -1,0 +1,9 @@
+.CommentCard{
+    border: black solid 2px;
+    margin: 0.5rem;
+    border-radius: 1rem;
+}
+
+.comment-content{
+    margin-left: 5rem;
+}
