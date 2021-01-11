@@ -1,5 +1,6 @@
 .modelPage{
     border: 2px black solid;
+    padding-bottom: 3rem !important;
 }
 
 .summary{

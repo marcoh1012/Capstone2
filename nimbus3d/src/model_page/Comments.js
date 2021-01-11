@@ -1,4 +1,4 @@
-import { Card, CardHeader, CardContent, Avatar } from '@material-ui/core';
+import { Card, CardHeader, CardContent, Avatar, TextField, Button } from '@material-ui/core';
 import React from 'react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -29,6 +29,19 @@ function Comments({id}){
                     <CardContent className="comment-content" dangerouslySetInnerHTML={{__html: comment.body_html}}></CardContent>
                 </Card>
             ))}
+            <div className='Add-Comment'>
+                    <form className='newComment' autoComplete="off">
+                        <TextField
+                            className='post-new-comment'
+                            id="outlined-multiline-static"
+                            label='Post Comment'
+                            multiline
+                            rows={4}
+                            defaultValue='Post Comment'
+                            variant="outlined" />
+                            <Button className='post-comment-button'>POST</Button>
+                    </form>
+            </div>
         </div>
     )
 }

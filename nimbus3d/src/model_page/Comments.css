@@ -7,3 +7,15 @@
 .comment-content{
     margin-left: 5rem;
 }
+
+.post-new-comment{
+    margin-top: 1.5rem !important;
+    width: 100% !important;
+}
+
+.post-comment-button{
+    float: right;
+    justify-content: center;
+    text-align: center;
+    background-color: blue !important;
+}
