@@ -1,13 +1,17 @@
-import { GET_CATEGORIES } from "../actions/types";
+import { act } from "react-dom/test-utils";
+import { GET_CATEGORIES, GET_CATEGORY } from "../actions/types";
 
-const INITIAL_STATE = [];
+const INITIAL_STATE = {};
 
 function categories(state = INITIAL_STATE, action) {
     switch (action.type) {
       case GET_CATEGORIES:
-        return [
-            ...action.payload
-    ];
+        return {...state, list: [...action.payload]}
+
+      case GET_CATEGORY:
+        console.log(action.payload)
+        return {...state,
+        [action.payload.name]: {...action.payload}}
   
       default:
         return state;

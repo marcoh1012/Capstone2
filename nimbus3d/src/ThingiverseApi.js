@@ -1,4 +1,5 @@
 import axios from 'axios';
+import categories from './reducers/categories';
 
 const BASE_URL = "https://api.thingiverse.com"
 
@@ -95,7 +96,11 @@ class ThingiverseApi {
     static async postComment(id, comment){
       //post comment on model
       let res = await this.request('comments/',{"body":comment, 'target_type': "thing",'target_id': parseInt(id)}, "post")
-      console.log(res)
+      return res
+    }
+
+    static async getCategory(name){
+      let res = await this.request(`categories/${name}`)
       return res
     }
   }

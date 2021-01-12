@@ -1,7 +1,6 @@
 export const LOG_IN = 'LOG_IN';
 export const LOG_OUT = 'LOG_OUT';
 export const GET_THINGS = "GET_THINGS"
-export const GET_CATEGORIES = "GET_CATEGORIES"
 export const GET_FEATURED = "GET_FEATURED"
 export const GET_LIKED = "GET_LIKED"
 
@@ -14,3 +13,6 @@ export const GET_FILES = "GET_FILES"
 export const GET_COMMENTS = "GET_COMMENTS"
 export const POST_COMMENT = "POST_COMMENT"
 
+//Category Types
+export const GET_CATEGORIES = "GET_CATEGORIES"
+export const GET_CATEGORY = "GET_CATEGORY"

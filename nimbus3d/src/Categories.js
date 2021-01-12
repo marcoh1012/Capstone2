@@ -9,8 +9,8 @@ import CategoryList from './CategoryList'
 
 function Home(){
     const dispatch = useDispatch()
-    let loaded = useSelector(st => st.categories[0] !== undefined)
-    let categories = useSelector(st => st.categories)
+    let loaded = useSelector(st => st.categories.list !== undefined)
+    let categories = useSelector(st => st.categories.list)
 
     useEffect(function(){
         dispatch(get_categories())
