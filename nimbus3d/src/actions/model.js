@@ -44,7 +44,15 @@ function get_comments(id) {
     console.log(res)
     dispatch(got_comments(res))
   }
-  
+}
+
+//post a comment to model
+function post_comment(id,comment){
+  return async function(dispatch){
+    const res = await ThingiverseApi.postComment(id, comment)
+    dispatch(posted_comment(res))
+  }
+
 }
 
 
@@ -74,4 +82,4 @@ function posted_comment(comment){
     return {type: POST_COMMENT, payload: comment}
 }
 
-export {get_model, like_model, unlike_model, get_files, get_comments}
+export {get_model, like_model, unlike_model, get_files, get_comments, post_comment}

@@ -91,6 +91,13 @@ class ThingiverseApi {
       let res = await this.request(`things/${id}/comments`)
       return res
     }
+
+    static async postComment(id, comment){
+      //post comment on model
+      let res = await this.request('comments/',{"body":comment, 'target_type': "thing",'target_id': parseInt(id)}, "post")
+      console.log(res)
+      return res
+    }
   }
 
   export default ThingiverseApi

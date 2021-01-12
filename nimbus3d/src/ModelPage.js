@@ -70,7 +70,7 @@ function ModelPage(){
 
             <div className='files' id='files'>
                 <h1>Files </h1>
-                <Button variant='outline-primary'>Download All</Button>
+                <Button variant='outlined'>Download All</Button>
                 {/* All downloadable files will go here */}
                 <DownloadFiles id={id}/>
                 

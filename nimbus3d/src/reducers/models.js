@@ -1,5 +1,5 @@
 import { act } from 'react-dom/test-utils'
-import {GET_COMMENTS, GET_FILES, GET_MODEL} from '../actions/types'
+import {GET_COMMENTS, GET_FILES, GET_MODEL, POST_COMMENT} from '../actions/types'
 
 const INITIAL_STATE = {}
 
@@ -19,6 +19,12 @@ function models(state = INITIAL_STATE, action){
             //add comments to state
             return {...state,
             'comments': action.payload}
+
+        case POST_COMMENT:
+            //add Comment
+            return {...state, 'comments': [
+                ...state.comments, action.payload
+            ]}
     
         default:
           return state;
