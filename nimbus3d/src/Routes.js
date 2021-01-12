@@ -5,6 +5,7 @@ import Categories from './Categories'
 import Featured from "./Featured";
 import Liked from "./Liked"
 import ModelPage from "./ModelPage"
+import CategoryModelList from "./CategoryModelList"
 import { useSelector } from "react-redux";
 import Login  from "./Login";
 
@@ -18,6 +19,9 @@ function Routes(){
         </Route>
         <Route exact path='/categories'>
           {loggedIn ? <Categories/> : <Login/>}
+        </Route>
+        <Route path = '/category/:id'>
+        {loggedIn ? <CategoryModelList/> : <Login/>}
         </Route>
         <Route exact path='/featured'>
           {loggedIn ? <Featured/> : <Login/>}

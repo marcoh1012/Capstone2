@@ -9,8 +9,16 @@ function get_things() {
 
   }
 
+function get_category_things(name){
+  return async function (dispatch) {
+    const res = await ThingiverseApi.getCategoryThings(name);
+    dispatch(got_things({hits: res}))
+    
+  }
+  
+}
 function got_things(data){
   return { type: GET_THINGS, payload: data }
 }
 
-export {get_things}
+export {get_things, get_category_things}

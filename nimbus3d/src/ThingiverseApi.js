@@ -103,6 +103,11 @@ class ThingiverseApi {
       let res = await this.request(`categories/${name}`)
       return res
     }
+
+    static async getCategoryThings(name){
+      let res = await this.request(`categories/${name}/things`)
+      return res
+    }
   }
 
   export default ThingiverseApi
