@@ -28,7 +28,7 @@ function Home(){
     
     return (
        <>
-        <h3>Logged In</h3>
+        <h2>Welcome!!</h2>
         <ModelList things={things}/>
         <Logout/>
         </>

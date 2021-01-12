@@ -23,7 +23,7 @@ function Featured(){
     
     return (
        <>
-        <h2>Featured</h2>
+        <h2>Likes</h2>
         <ModelList things={things}/>
         <Logout/>
         </>

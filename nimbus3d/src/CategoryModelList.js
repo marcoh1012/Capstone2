@@ -25,7 +25,10 @@ function CategoryModelList(){
     }
 
     return(
+        <>
+        <h2>params.id</h2>
         <ModelList things={things}/>
+        </>
     )
 
 }
