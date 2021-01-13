@@ -6,6 +6,7 @@ import categories from './categories'
 import featured from './featured'
 import models from './models'
 import auth from './auth'
+import page from './page'
 
 export default combineReducers({
     auth,
@@ -13,5 +14,6 @@ export default combineReducers({
     things,
     categories,
     featured,
-    models
+    models,
+    page
   });

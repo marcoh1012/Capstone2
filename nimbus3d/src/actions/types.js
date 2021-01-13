@@ -16,3 +16,8 @@ export const POST_COMMENT = "POST_COMMENT"
 //Category Types
 export const GET_CATEGORIES = "GET_CATEGORIES"
 export const GET_CATEGORY = "GET_CATEGORY"
+
+
+//Page Types
+export const SET_PAGE = "SET_PAGE"
+export const SET_DAYS = "SET_DAYS"

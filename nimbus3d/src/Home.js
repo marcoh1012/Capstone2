@@ -27,21 +27,21 @@ function Home(){
     },[dispatch])
     
     const handleClick7 = () => {
-        dispatch(get_things(7));
+        dispatch(get_things(7,1));
     }
 
     const handleClick30 = () => {
-        dispatch(get_things(30));
+        dispatch(get_things(30,1));
     }
 
     const handleClick365 = () => {
-        dispatch(get_things(365));
+        dispatch(get_things(365,1));
     }
 
     const handleClickRandom = () => {
         let days = Math.round(Math.random() * 730)
         console.log(days)
-        dispatch(get_things(days))
+        dispatch(get_things(days,1))
     }
     const handleSetPage =(num) =>{
         alert(num)
