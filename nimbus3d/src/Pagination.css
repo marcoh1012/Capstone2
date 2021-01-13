@@ -17,4 +17,5 @@
 
 .pg-active{
     box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.336);
+    background-color: rgba(40, 40, 245, 0.411);
 }

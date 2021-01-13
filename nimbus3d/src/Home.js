@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Button, CircularProgress } from '@material-ui/core';
 import { get_things } from "./actions/thing";
 import { get_liked } from "./actions/user"
+import { set_days, set_page} from './actions/page'
 import { useEffect } from 'react';
 import ModelList from './ModelList'
 
@@ -16,36 +17,38 @@ function Home(){
     let loaded = useSelector(st => st.things.things !== undefined && st.users.liked !==undefined )
     let things = useSelector(st => st.things.things)
     let total = useSelector(st => st.things.total_things)
+    let currentPage = useSelector( st => st.page.current_page)
+    let days = useSelector(st => st.page.days)
 
-    const [currentPage, setPage] = useState(1)
-    const [days, setDays] = useState(7)
-
+    console.log('page:', currentPage)
 
     useEffect(function(){
-        dispatch(get_things());
+        dispatch(get_things(days,currentPage));
         dispatch(get_liked());
-    },[dispatch])
+    },[days, currentPage, dispatch])
     
     const handleClick7 = () => {
+        dispatch(set_days(7));
         dispatch(get_things(7,1));
     }
 
     const handleClick30 = () => {
+        dispatch(set_days(30));
         dispatch(get_things(30,1));
     }
 
     const handleClick365 = () => {
+        dispatch(set_days(365));
         dispatch(get_things(365,1));
     }
 
     const handleClickRandom = () => {
-        let days = Math.round(Math.random() * 730)
-        console.log(days)
-        dispatch(get_things(days,1))
+        let rdm_days = Math.round(Math.random() * 730)
+        dispatch(set_days(rdm_days));
+        dispatch(get_things(rdm_days,1))
     }
     const handleSetPage =(num) =>{
-        alert(num)
-        setPage(num)
+        dispatch(set_page(num))
         dispatch(get_things(days,num))
     }
     

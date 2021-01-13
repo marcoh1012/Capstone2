@@ -1,10 +1,15 @@
 import React from 'react'
+import FirstPageIcon from '@material-ui/icons/FirstPage';
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 
 import './Pagination.css'
 
 function Pagination({setPage, currentPage, pages}){
 
     if(pages===1) return null;
+
+    let hidden = currentPage === 1 ? 'hidden' : ''
 
     let range = []
 
@@ -18,15 +23,35 @@ function Pagination({setPage, currentPage, pages}){
             range.push(i);
           }
     }
-    console.log(range)
 
     const clickLastPage = ev => {
         ev.preventDefault();
         setPage(pages);
       };
 
+    const clickFirstPage = ev => {
+        ev.preventDefault();
+        setPage(1)
+    }
+
+    const clickPrevPage = ev => {
+        ev.preventDefault();
+        setPage(currentPage - 1)
+    }
+    const clickNextPage = ev => {
+        ev.preventDefault();
+        setPage(currentPage + 1)
+    }
+
+
     return (<div className='pages'>
         <ul className="pagination">
+            {currentPage === 1 ? " " : ( 
+                <>
+                <li className='page' ><FirstPageIcon onClick={clickFirstPage}/></li>
+                <li className='page'><ArrowBackIosIcon onClick={clickPrevPage}/></li>
+                </>
+            )}
             {range.map( num => {
                 const clickPage = ev => {
                     ev.preventDefault();
@@ -40,6 +65,11 @@ function Pagination({setPage, currentPage, pages}){
             )}
             <div>....</div>
             <li className= { pages===currentPage ? 'page pg-active' : 'page' } onClick={clickLastPage}>{pages}</li>
+            {currentPage === pages ? " " : ( 
+                <>
+                <li className='page'><ArrowForwardIosIcon onClick={clickNextPage}/></li>
+                </>
+            )}
         </ul>
     </div>)
 }
