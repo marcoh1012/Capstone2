@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import Logout from './Logout'
 import { useSelector, useDispatch } from 'react-redux';
 import { Button, CircularProgress } from '@material-ui/core';
@@ -29,22 +28,26 @@ function Home(){
     
     const handleClick7 = () => {
         dispatch(set_days(7));
+        dispatch(set_page(1));
         dispatch(get_things(7,1));
     }
 
     const handleClick30 = () => {
         dispatch(set_days(30));
+        dispatch(set_page(1));
         dispatch(get_things(30,1));
     }
 
     const handleClick365 = () => {
         dispatch(set_days(365));
+        dispatch(set_page(1));
         dispatch(get_things(365,1));
     }
 
     const handleClickRandom = () => {
         let rdm_days = Math.round(Math.random() * 730)
         dispatch(set_days(rdm_days));
+        dispatch(set_page(1));
         dispatch(get_things(rdm_days,1))
     }
     const handleSetPage =(num) =>{
