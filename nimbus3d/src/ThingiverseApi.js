@@ -36,9 +36,9 @@ class ThingiverseApi {
       }
     }
 
-    static async getAll(handle,days=7){
+    static async getAll(handle,page=1 ,days=7){
       let res = await this.request('search',{
-        page:1,
+        page:page,
         per_page:30,
         sort: 'popular',
         posted_after: `now-${days}d`,

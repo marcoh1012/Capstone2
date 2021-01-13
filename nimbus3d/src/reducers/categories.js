@@ -9,7 +9,6 @@ function categories(state = INITIAL_STATE, action) {
         return {...state, list: [...action.payload]}
 
       case GET_CATEGORY:
-        console.log(action.payload)
         return {...state,
         [action.payload.name]: {...action.payload}}
   

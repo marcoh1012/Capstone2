@@ -1,9 +1,9 @@
 import { GET_THINGS } from "./types";
 import ThingiverseApi from "../ThingiverseApi"
 
-function get_things() {
+function get_things(days) {
     return async function (dispatch){
-        const res = await ThingiverseApi.getAll('things');
+        const res = await ThingiverseApi.getAll('things',days);
         dispatch(got_things(res))
     }
 

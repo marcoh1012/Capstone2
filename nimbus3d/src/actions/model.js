@@ -31,7 +31,6 @@ function unlike_model(thing){
 function get_files(id) {
   return async function(dispatch){
     const res = await ThingiverseApi.getFiles(id)
-    console.log(res)
     dispatch(got_files(res))
   }
   
@@ -41,7 +40,6 @@ function get_files(id) {
 function get_comments(id) {
   return async function(dispatch){
     const res = await ThingiverseApi.getComments(id)
-    console.log(res)
     dispatch(got_comments(res))
   }
 }
