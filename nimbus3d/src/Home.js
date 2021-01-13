@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Logout from './Logout'
 import { useSelector, useDispatch } from 'react-redux';
 import { Button, CircularProgress } from '@material-ui/core';
@@ -8,6 +8,7 @@ import { useEffect } from 'react';
 import ModelList from './ModelList'
 
 import './Home.css'
+import Pagination from './Pagination';
 
 
 function Home(){
@@ -15,6 +16,9 @@ function Home(){
     let loaded = useSelector(st => st.things.things !== undefined && st.users.liked !==undefined )
     let things = useSelector(st => st.things.things)
     let total = useSelector(st => st.things.total_things)
+
+    const [currentPage, setPage] = useState(1)
+    const [days, setDays] = useState(7)
 
 
     useEffect(function(){
@@ -39,6 +43,11 @@ function Home(){
         console.log(days)
         dispatch(get_things(days))
     }
+    const handleSetPage =(num) =>{
+        alert(num)
+        setPage(num)
+        dispatch(get_things(days,num))
+    }
     
     if(!loaded){
         return(
@@ -56,6 +65,11 @@ function Home(){
             <Button onClick={handleClickRandom}>Random</Button>
         </div>
         <ModelList things={things}/>
+
+        <Pagination 
+            currentPage = {currentPage}
+            setPage = {handleSetPage}
+            pages = {Math.ceil(total/30)}/>
         <Logout/>
         </>
     )

@@ -1,0 +1,20 @@
+
+.pagination{
+    display: flex;
+}
+
+.pagination li{
+    text-decoration: none;
+    list-style: none;
+    }
+
+.page{
+    padding: 0.5rem;
+    margin: 0.2rem;
+    border: black 1px solid;
+
+}
+
+.pg-active{
+    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.336);
+}

@@ -28,7 +28,6 @@ function LikeButton({thing}){
     if(isLiked.length === 0) return (<Button className='favorite-button' onClick={handleFavorite}><FavoriteBorderIcon/>{likes}</Button>);
 
     const items = isLiked.filter(item => item.id === thing.id)
-    console.log('items: ', items)
 
     if(items.length === 0)return (<Button className='favorite-button' onClick={handleFavorite}><FavoriteBorderIcon/>{likes}</Button>);
     
