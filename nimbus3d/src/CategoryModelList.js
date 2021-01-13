@@ -11,8 +11,8 @@ function CategoryModelList(){
     const params = useParams();
     const dispatch = useDispatch();
 
-    let loaded = useSelector(st => st.things[0] !== undefined && st.users.liked !==undefined )
-    const things = useSelector(st => st.things)
+    let loaded = useSelector(st => st.things.things !== undefined && st.users.liked !==undefined )
+    const things = useSelector(st => st.things.things)
 
     useEffect(function(){
         dispatch(get_category_things(params.id));
