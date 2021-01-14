@@ -17,8 +17,17 @@ function get_category_things(name){
   }
   
 }
+
+function search_things(term){
+    return async function(dispatch){
+      const res = await ThingiverseApi.search(term);
+      console.log(res)
+      dispatch(got_things(res))
+    }
+}
+
 function got_things(data){
   return { type: GET_THINGS, payload: data }
 }
 
-export {get_things, get_category_things}
+export {get_things, get_category_things, search_things}

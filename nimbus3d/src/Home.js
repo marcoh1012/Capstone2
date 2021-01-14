@@ -19,7 +19,6 @@ function Home(){
     let currentPage = useSelector( st => st.page.current_page)
     let days = useSelector(st => st.page.days)
 
-    console.log('page:', currentPage)
 
     useEffect(function(){
         dispatch(get_things(days,currentPage));

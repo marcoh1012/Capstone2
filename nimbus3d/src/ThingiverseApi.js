@@ -1,3 +1,4 @@
+import { ContactSupportOutlined } from '@material-ui/icons';
 import axios from 'axios';
 import categories from './reducers/categories';
 
@@ -108,6 +109,20 @@ class ThingiverseApi {
       let res = await this.request(`categories/${name}/things`)
       return res
     }
+  
+    static async search(term){
+      let res = await this.request(`search/${term}/`,{
+        page:1,
+        per_page:30,
+        sort: 'popular',
+        type: 'thing'
+      })
+      return res
+
+    }
+
   }
+
+
 
   export default ThingiverseApi

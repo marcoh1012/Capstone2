@@ -8,6 +8,7 @@ import ModelPage from "./ModelPage"
 import CategoryModelList from "./CategoryModelList"
 import { useSelector } from "react-redux";
 import Login  from "./Login";
+import SearchPage from './SearchPage';
 
 
 function Routes(){
@@ -34,6 +35,10 @@ function Routes(){
         </Route>
         <Route path='/model/:id'>
           {loggedIn ? <ModelPage/> : <Login/>}
+        </Route>
+
+        <Route path='/search/:term'>
+          {loggedIn ? <SearchPage/> : <Login/>}
         </Route>
         <Redirect to='/'/>
     </Switch>
