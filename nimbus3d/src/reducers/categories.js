@@ -1,4 +1,3 @@
-import { act } from "react-dom/test-utils";
 import { GET_CATEGORIES, GET_CATEGORY } from "../actions/types";
 
 const INITIAL_STATE = {};

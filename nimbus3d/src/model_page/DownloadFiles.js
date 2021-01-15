@@ -12,7 +12,6 @@ function DownloadFiles({id}){
     const access_token = useSelector(st => st.auth['access_token'])
 
     let files = useSelector(st => st.models.files)
-    console.log(id)
 
     useEffect(function() {
         dispatch(get_files(id))

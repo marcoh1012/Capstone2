@@ -11,7 +11,7 @@ function get_model(id) {
 
 function like_model(thing){
   return async function (dispatch) {
-    const res = await ThingiverseApi.likeModel(thing.id);
+    await ThingiverseApi.likeModel(thing.id);
     thing.like_count = thing.like_count + 1;
     dispatch(liked_model(thing))
     
@@ -20,7 +20,7 @@ function like_model(thing){
 
 function unlike_model(thing){
   return async function(dispatch){
-    const res = await ThingiverseApi.unlikeModel(thing.id);
+    await ThingiverseApi.unlikeModel(thing.id);
     thing.like_count = thing.like_count - 1;
     dispatch(unliked_model(thing))
   }

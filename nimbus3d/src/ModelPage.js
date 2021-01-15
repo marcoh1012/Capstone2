@@ -3,9 +3,6 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { get_model } from './actions/model';
-import FavoriteBorderIcon  from '@material-ui/icons/FavoriteBorder';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import {like_model, unlike_model} from './actions/model'
 import GetAppIcon from '@material-ui/icons/GetApp';
 import FileCopyIcon from '@material-ui/icons/FileCopy';
 import ChatBubbleIcon from '@material-ui/icons/ChatBubble';

@@ -12,7 +12,6 @@ function get_things(days,page) {
 function get_category_things(name, page){
   return async function (dispatch) {
     const res = await ThingiverseApi.getCategoryThings(name, page);
-    console.log(res)
     dispatch(got_things(res))
     
   }

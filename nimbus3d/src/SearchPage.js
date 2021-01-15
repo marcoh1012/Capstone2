@@ -15,7 +15,6 @@ function SearchPage(){
     const things = useSelector(st => st.things.things)
     let total = useSelector(st => st.things.total_things)
     let currentPage = useSelector( st => st.page.current_page)
-    console.log(currentPage)
 
     useEffect(function () {
         dispatch(set_page(1))

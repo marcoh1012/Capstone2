@@ -1,4 +1,3 @@
-import { act } from 'react-dom/test-utils'
 import {GET_COMMENTS, GET_FILES, GET_MODEL, POST_COMMENT} from '../actions/types'
 
 const INITIAL_STATE = {}

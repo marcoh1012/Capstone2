@@ -1,6 +1,5 @@
-import { ContactSupportOutlined } from '@material-ui/icons';
+// import { ContactSupportOutlined } from '@material-ui/icons';
 import axios from 'axios';
-import categories from './reducers/categories';
 
 const BASE_URL = "https://api.thingiverse.com"
 
@@ -45,7 +44,6 @@ class ThingiverseApi {
         posted_after: `now-${days}d`,
         type: 'thing'
       })
-      console.log(res)
       return res
       // https://www.thingiverse.com/search?page=2&per_page=20&sort=popular&posted_after=now-30d&type=things&q=
     }

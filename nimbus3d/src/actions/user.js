@@ -1,4 +1,4 @@
-import { GET_LIKED, LOG_IN, LOG_OUT } from "./types";
+import { GET_LIKED} from "./types";
 import ThingiverseApi from '../ThingiverseApi'
 
 function get_liked(){
