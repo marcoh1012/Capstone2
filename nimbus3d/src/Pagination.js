@@ -9,7 +9,6 @@ function Pagination({setPage, currentPage, pages}){
 
     if(pages===1) return null;
 
-    let hidden = currentPage === 1 ? 'hidden' : ''
 
     let range = []
 
@@ -57,7 +56,7 @@ function Pagination({setPage, currentPage, pages}){
                     ev.preventDefault();
                     setPage(num);
                   };
-                return(<li 
+                return(<li key={num}
                 className= { num===currentPage ? 'page pg-active' : 'page' }
                 onClick={clickPage}
                 >{num}</li>

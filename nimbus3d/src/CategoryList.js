@@ -6,14 +6,11 @@ import CategoryCard from './CategoryCard';
 
 
 function ModelList({categories}){
-    console.log(categories)
     
     return(
         <div className='model-list'>
             {categories.map(category => (
                 <Link to={`/category/${category.slug}`} key={category.id}>
-                    {/* <ModelCard key={categories.id} category={category}/>
-                    <div>{category.name}---{category.count}Models</div> <br/> */}
                     <CategoryCard key={category.id} category={category}/>
                 </Link>
                 

@@ -105,9 +105,16 @@ class ThingiverseApi {
       return res
     }
 
-    static async getCategoryThings(name){
-      let res = await this.request(`categories/${name}/things`)
-      return res
+    static async getCategoryThings(name,page=1, days=7){
+      let res1 = await this.request(`categories/${name}`)
+      let res2 = await this.request(`categories/${name}/things`,{
+        page:page,
+        per_page:30,
+        sort: 'popular',
+        posted_after: `now-7d`,
+        type: 'thing'
+      })
+      return {total: res1.count, hits: res2}
     }
   
     static async search(term){

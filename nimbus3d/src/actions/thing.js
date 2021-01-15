@@ -9,10 +9,11 @@ function get_things(days,page) {
 
   }
 
-function get_category_things(name){
+function get_category_things(name, page){
   return async function (dispatch) {
-    const res = await ThingiverseApi.getCategoryThings(name);
-    dispatch(got_things({hits: res}))
+    const res = await ThingiverseApi.getCategoryThings(name, page);
+    console.log(res)
+    dispatch(got_things(res))
     
   }
   
@@ -21,7 +22,6 @@ function get_category_things(name){
 function search_things(term){
     return async function(dispatch){
       const res = await ThingiverseApi.search(term);
-      console.log(res)
       dispatch(got_things(res))
     }
 }
