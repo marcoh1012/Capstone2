@@ -19,9 +19,9 @@ function get_category_things(name, page){
   
 }
 
-function search_things(term){
+function search_things(term, page){
     return async function(dispatch){
-      const res = await ThingiverseApi.search(term);
+      const res = await ThingiverseApi.search(term, page);
       dispatch(got_things(res))
     }
 }

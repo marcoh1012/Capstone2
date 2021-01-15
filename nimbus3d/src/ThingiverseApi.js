@@ -117,9 +117,9 @@ class ThingiverseApi {
       return {total: res1.count, hits: res2}
     }
   
-    static async search(term){
+    static async search(term, page=1){
       let res = await this.request(`search/${term}/`,{
-        page:1,
+        page:page,
         per_page:30,
         sort: 'popular',
         type: 'thing'
