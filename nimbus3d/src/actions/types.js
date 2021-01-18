@@ -21,3 +21,6 @@ export const GET_CATEGORY = "GET_CATEGORY"
 //Page Types
 export const SET_PAGE = "SET_PAGE"
 export const SET_DAYS = "SET_DAYS"
+
+//User Types
+export const USER_INFO = 'USER_INFO'

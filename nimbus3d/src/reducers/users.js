@@ -1,4 +1,4 @@
-import {GET_LIKED, LIKE_MODEL, LOG_IN, LOG_OUT, UNLIKE_MODEL} from "../actions/types";
+import {GET_LIKED, LIKE_MODEL, LOG_IN, LOG_OUT, UNLIKE_MODEL, USER_INFO} from "../actions/types";
 
 
 const INITIAL_STATE = {};
@@ -27,6 +27,11 @@ function users(state = INITIAL_STATE, action) {
           return{...state, 'liked': 
             state.liked.filter(thing => thing.id !== action.payload.id)
           }
+
+      case USER_INFO:
+        return{...state, 
+          info: {...action.payload}
+        }
 
       default:
         return state;

@@ -2,7 +2,7 @@ import Logout from './Logout'
 import { useSelector, useDispatch } from 'react-redux';
 import { Button, CircularProgress } from '@material-ui/core';
 import { get_things } from "./actions/thing";
-import { get_liked } from "./actions/user"
+import { get_liked, get_user_info } from "./actions/user"
 import { set_days, set_page} from './actions/page'
 import { useEffect } from 'react';
 import ModelList from './ModelList'
@@ -18,6 +18,11 @@ function Home(){
     let total = useSelector(st => st.things.total_things)
     let currentPage = useSelector( st => st.page.current_page)
     let days = useSelector(st => st.page.days)
+    let user_info = useSelector(st => st.users.info)
+
+    if(user_info === undefined){
+        dispatch(get_user_info())
+    }
 
 
     useEffect(function(){

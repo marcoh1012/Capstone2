@@ -36,6 +36,12 @@ class ThingiverseApi {
       }
     }
 
+
+    static async getUserData(){
+      let res = await this.request('users/me')
+      return res
+    }
+
     static async getAll(handle,page=1 ,days=7){
       let res = await this.request('search',{
         page:page,

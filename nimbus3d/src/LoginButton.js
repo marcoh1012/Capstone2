@@ -5,6 +5,7 @@ import {authURL, clientID,} from './config'
 import { LogIn } from "./actions/auth";
 
 import './LoginButton.css'
+import { get_user_info } from './actions/user';
  
 
 
@@ -16,6 +17,7 @@ const onFailure = response => console.error(response);
 
 function logIn(token) {
     dispatch(LogIn(token))
+    dispatch(get_user_info())
 }
 
     return(<OAuth2Login
