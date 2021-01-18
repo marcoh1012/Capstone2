@@ -4,7 +4,8 @@ import ThingiverseApi from "../ThingiverseApi"
 function get_model(id) {
     return async function (dispatch){
         const res = await ThingiverseApi.getModel(id);
-        dispatch(got_model({id:id, data: res}))
+        const link = await ThingiverseApi.getDownloadLink(id);
+        dispatch(got_model({id:id, data: res, link: link}))
     }
 
   }

@@ -1,8 +1,8 @@
 import { Button, CircularProgress, Container } from '@material-ui/core';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { get_model } from './actions/model';
+import { get_files, get_model } from './actions/model';
 import GetAppIcon from '@material-ui/icons/GetApp';
 import FileCopyIcon from '@material-ui/icons/FileCopy';
 import ChatBubbleIcon from '@material-ui/icons/ChatBubble';
@@ -16,21 +16,42 @@ import Comments from './model_page/Comments';
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import LikeButton from './LikeButton';
 
+import JSZip from 'jszip'
+import { saveAs } from 'file-saver';
+import ThingiverseApi from './ThingiverseApi';
+
 function ModelPage(){
     const params = useParams();
     const dispatch = useDispatch();
     const id = params.id
+    let zip = new JSZip();
+
 
     let loaded = useSelector(st => st.models[params.id] !== undefined)
     let model = useSelector(st => st.models[params.id])
-    
+    let files = useSelector(st => st.models.files)
    
     useEffect(function(){
         dispatch(get_liked())
         dispatch(get_model(params.id))
+        dispatch(get_files(params.id))
 
     },[params.id, dispatch])
     
+
+    async function zipFolder(){
+    
+        alert('downloading')
+        for (let file of files)
+        {
+            let stl = await ThingiverseApi.downloadFile(file.id)
+            zip.file(file.name, stl )
+        }
+        zip.generateAsync({type:"blob"}).then(function(content) {
+            saveAs(content, `${model.name}.zip`);
+        });
+        
+    }
     
     if(!loaded){
         return(
@@ -47,7 +68,7 @@ function ModelPage(){
             </div>
             <div className='action_buttons'>
                 <div className='likes-button'><LikeButton thing={model}/></div>
-                <div><Button className='download-all' title="Download All"><GetAppIcon/></Button></div>
+                <div><Button onClick={zipFolder} className='download-all' title="Download All"><GetAppIcon/></Button></div>
                 <div><Button className='view-all-files' title="Files" href="#files"><FileCopyIcon/></Button></div>
                 <div><Button className='comment-icon' title='Comments' href="#comments"><ChatBubbleIcon/></Button></div>
                 <div><CopyToClipboard text={`localhost:3000/model/${model.id}`}>
@@ -67,7 +88,7 @@ function ModelPage(){
 
             <div className='files' id='files'>
                 <h1>Files </h1>
-                <Button variant='outlined'>Download All</Button>
+                <Button onClick={zipFolder} variant='outlined'>Download All</Button>
                 {/* All downloadable files will go here */}
                 <DownloadFiles id={id}/>
                 

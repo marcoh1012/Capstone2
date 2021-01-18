@@ -6,7 +6,8 @@ function models(state = INITIAL_STATE, action){
     switch (action.type) {
         case GET_MODEL:
             return {...state,
-            [action.payload.id] : action.payload.data
+            [action.payload.id] : action.payload.data,
+            link: action.payload.link
         }
     
         case GET_FILES:

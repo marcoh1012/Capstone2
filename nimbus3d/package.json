@@ -9,6 +9,8 @@
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.6.0",
     "axios": "^0.21.1",
+    "file-saver": "^2.0.5",
+    "jszip": "^3.5.0",
     "material-auto-rotating-carousel": "^3.0.2",
     "react": "^17.0.1",
     "react-copy-to-clipboard": "^5.0.2",
