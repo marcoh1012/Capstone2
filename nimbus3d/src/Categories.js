@@ -27,7 +27,6 @@ function Home(){
        <>
         <h3>Categories</h3>
         <CategoryList categories={categories}/>
-        <Logout/>
         </>
     )
 

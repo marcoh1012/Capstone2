@@ -25,7 +25,6 @@ function Featured(){
        <>
         <h2>Likes</h2>
         <ModelList things={things}/>
-        <Logout/>
         </>
     )
 

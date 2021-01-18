@@ -1,4 +1,3 @@
-import Logout from './Logout'
 import { useSelector, useDispatch } from 'react-redux';
 import { Button, CircularProgress } from '@material-ui/core';
 import { get_things } from "./actions/thing";
@@ -80,7 +79,6 @@ function Home(){
             currentPage = {currentPage}
             setPage = {handleSetPage}
             pages = {Math.ceil(total/30)}/>
-        <Logout/>
         </>
     )
 
