@@ -104,6 +104,14 @@ class ThingiverseApi {
       return res
     }
 
+    static async deleteComment(id){
+      //delete a user comment
+      console.log(id)
+      let res = await this.request(`comments/${id}`, {}, "delete")
+      console.log(res)
+      return res
+    }
+
     static async getCategory(name){
       let res = await this.request(`categories/${name}`)
       return res

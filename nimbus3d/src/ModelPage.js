@@ -12,7 +12,7 @@ import DownloadFiles from "./model_page/DownloadFiles";
 import DownloadingModal from "./model_page/DownloadingModal"
 
 import './ModelPage.css'
-import { get_liked } from './actions/user';
+import { get_liked, get_user_info } from './actions/user';
 import Comments from './model_page/Comments';
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import LikeButton from './LikeButton';
@@ -34,6 +34,12 @@ function ModelPage(){
     let loaded = useSelector(st => st.models[params.id] !== undefined)
     let model = useSelector(st => st.models[params.id])
     let files = useSelector(st => st.models.files)
+
+    let user_info = useSelector(st => st.users.info)
+
+    if(user_info === undefined){
+        dispatch(get_user_info())
+    }
    
     useEffect(function(){
         dispatch(get_liked())
@@ -96,7 +102,7 @@ function ModelPage(){
             </div>
             <div className="comments" id='comments'>
                 <h1>Comments</h1>
-                <Comments id={id}/>
+                <Comments id={id} username={user_info.name}/>
             </div>
             </div>
            

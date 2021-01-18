@@ -1,4 +1,5 @@
-import {GET_COMMENTS, GET_FILES, GET_MODEL, POST_COMMENT} from '../actions/types'
+
+import {DELETE_COMMENT, GET_COMMENTS, GET_FILES, GET_MODEL, POST_COMMENT} from '../actions/types'
 
 const INITIAL_STATE = {}
 
@@ -25,6 +26,14 @@ function models(state = INITIAL_STATE, action){
             return {...state, 'comments': [
                 ...state.comments, action.payload
             ]}
+
+        case DELETE_COMMENT:
+            //delete Coment
+            return {...state, comments:[
+                state.comments.filter(comment => comment.id !== action.payload.id)
+            ]
+            }
+
     
         default:
           return state;

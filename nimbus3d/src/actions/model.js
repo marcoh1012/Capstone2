@@ -1,4 +1,4 @@
-import { GET_COMMENTS, GET_FILES, GET_MODEL, LIKE_MODEL, POST_COMMENT, UNLIKE_MODEL } from "./types";
+import { DELETE_COMMENT, GET_COMMENTS, GET_FILES, GET_MODEL, LIKE_MODEL, POST_COMMENT, UNLIKE_MODEL } from "./types";
 import ThingiverseApi from "../ThingiverseApi"
 
 function get_model(id) {
@@ -54,6 +54,15 @@ function post_comment(id,comment){
 
 }
 
+//delete comment from model
+function delete_comment(id){
+  return async function(dispatch){
+    const res = await ThingiverseApi.deleteComment(id)
+    if(res.ok) dispatch(deleted_comment(id))
+  }
+
+}
+
 
 
 function got_model(data){
@@ -81,4 +90,9 @@ function posted_comment(comment){
     return {type: POST_COMMENT, payload: comment}
 }
 
-export {get_model, like_model, unlike_model, get_files, get_comments, post_comment}
+function deleted_comment(id){
+  return {type: DELETE_COMMENT, payload: id}
+}
+
+
+export {get_model, like_model, unlike_model, get_files, get_comments, post_comment, delete_comment}

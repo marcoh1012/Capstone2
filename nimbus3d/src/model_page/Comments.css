@@ -2,10 +2,13 @@
     border: black solid 2px;
     margin: 0.5rem;
     border-radius: 1rem;
+    padding-bottom: 0.5rem;
+    padding-right: 0.5rem;
 }
 
 .comment-content{
     margin-left: 5rem;
+    margin-bottom: 1rem !important;
 }
 
 .post-new-comment{
@@ -18,4 +21,12 @@
     justify-content: center;
     text-align: center;
     background-color: blue !important;
+    color: white !important;
+}
+
+.delete-comment{
+    padding: 0.5rem;
+    background-color: blue !important;
+    color: white !important;
+    float: right;
 }
