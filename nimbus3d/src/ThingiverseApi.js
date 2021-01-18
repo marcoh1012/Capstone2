@@ -94,7 +94,9 @@ class ThingiverseApi {
 
     static async getComments(id){
       //get all comments from model
+      console.log(id)
       let res = await this.request(`things/${id}/comments`)
+      console.log(res)
       return res
     }
 
@@ -106,9 +108,7 @@ class ThingiverseApi {
 
     static async deleteComment(id){
       //delete a user comment
-      console.log(id)
       let res = await this.request(`comments/${id}`, {}, "delete")
-      console.log(res)
       return res
     }
 

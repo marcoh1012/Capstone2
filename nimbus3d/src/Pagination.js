@@ -26,20 +26,24 @@ function Pagination({setPage, currentPage, pages}){
     const clickLastPage = ev => {
         ev.preventDefault();
         setPage(pages);
+        window.scrollTo(0, 0)
       };
 
     const clickFirstPage = ev => {
         ev.preventDefault();
         setPage(1)
+        window.scrollTo(0, 0)
     }
 
     const clickPrevPage = ev => {
         ev.preventDefault();
         setPage(currentPage - 1)
+        window.scrollTo(0, 0)
     }
     const clickNextPage = ev => {
         ev.preventDefault();
         setPage(currentPage + 1)
+        window.scrollTo(0, 0)
     }
 
 
@@ -55,6 +59,7 @@ function Pagination({setPage, currentPage, pages}){
                 const clickPage = ev => {
                     ev.preventDefault();
                     setPage(num);
+                    window.scrollTo(0, 0)
                   };
                 return(<li key={num}
                 className= { num===currentPage ? 'page pg-active' : 'page' }
