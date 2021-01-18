@@ -9,6 +9,7 @@ import CategoryModelList from "./CategoryModelList"
 import { useSelector } from "react-redux";
 import Login  from "./Login";
 import SearchPage from './SearchPage';
+import AccountPage from './AccountPage';
 
 
 function Routes(){
@@ -31,7 +32,7 @@ function Routes(){
           {loggedIn ? <Liked/> : <Login/>}
         </Route>
         <Route exact path='/account'>
-            
+         {loggedIn ? <AccountPage/> : <Login/>}
         </Route>
         <Route path='/model/:id'>
           {loggedIn ? <ModelPage/> : <Login/>}
