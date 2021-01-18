@@ -9,6 +9,7 @@ import ChatBubbleIcon from '@material-ui/icons/ChatBubble';
 import LinkIcon from '@material-ui/icons/Link';
 import Carousel from './Carousel'
 import DownloadFiles from "./model_page/DownloadFiles";
+import DownloadingModal from "./model_page/DownloadingModal"
 
 import './ModelPage.css'
 import { get_liked } from './actions/user';
@@ -26,6 +27,9 @@ function ModelPage(){
     const id = params.id
     let zip = new JSZip();
 
+    const [downloading, setDownloading] = useState(false);
+
+
 
     let loaded = useSelector(st => st.models[params.id] !== undefined)
     let model = useSelector(st => st.models[params.id])
@@ -39,18 +43,22 @@ function ModelPage(){
     },[params.id, dispatch])
     
 
+    //function to download all files into one zip folder
     async function zipFolder(){
-    
-        alert('downloading')
+        setDownloading(true)
+
         for (let file of files)
         {
             let stl = await ThingiverseApi.downloadFile(file.id)
             zip.file(file.name, stl )
         }
+
+        
         zip.generateAsync({type:"blob"}).then(function(content) {
             saveAs(content, `${model.name}.zip`);
         });
         
+        setDownloading(false)
     }
     
     if(!loaded){
@@ -77,13 +85,6 @@ function ModelPage(){
                 <div><Button className='view-more-icon' title="View More">VIEW MORE</Button></div>
             </div>
             <div className='summary'>
-                {/* <h3>
-                    Summary:
-                </h3>
-                <div dangerouslySetInnerHTML={{__html: model.description_html}}></div>
-                <h3>
-                    Print Settings:
-                </h3> */}
                 <div dangerouslySetInnerHTML={{__html: model.details}}></div>
 
             <div className='files' id='files'>
@@ -99,6 +100,7 @@ function ModelPage(){
             </div>
             </div>
            
+           <DownloadingModal open={downloading} setOpen={setDownloading}/>
 
         </Container>
     )

@@ -1,0 +1,25 @@
+
+  .downloading_modal{
+    height: 100% !important;
+    display: 'flex';
+    align-items: 'center';
+    justify-content: 'center';
+  }
+
+  .fade{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    height: 100%;
+    background-color:rgba(0, 0, 255, 0.507);
+    border: '2px solid #000';
+    box-shadow: 5px;
+    padding: 2px 4px 3px; 
+    color: white
+  }
+
+.downloading-progress{
+    color: white !important;
+    margin-left: 1rem;
+}
