@@ -1,5 +1,4 @@
 import React from 'react'
-import Logout from './Logout'
 import { useSelector, useDispatch } from 'react-redux';
 import { CircularProgress } from '@material-ui/core';
 import { get_categories } from "./actions/category";

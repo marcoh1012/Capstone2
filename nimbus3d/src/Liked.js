@@ -1,5 +1,4 @@
 import React from 'react'
-import Logout from './Logout'
 import { useSelector, useDispatch } from 'react-redux';
 import { get_liked } from "./actions/user";
 import { useEffect } from 'react';

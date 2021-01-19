@@ -1,0 +1,108 @@
+.Account-Page{
+    position:fixed;
+    padding:0;
+    margin:0;
+
+    width: 100%;
+    height: 100%;
+    background-color: rgb(58, 58, 58);
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+}
+
+.user-card{
+    position: relative;
+    bottom: 15%;
+    width: 70rem;
+    height: 30rem;
+    justify-content: left;
+    text-align: left;
+    border: blue 3px solid;
+    border-radius: 1rem !important;
+}
+
+.user-card-top{
+    height: 70%;
+    display: flex;
+}
+
+.user-thumbnail{
+    margin: 1rem;
+    width: 25%;
+}
+
+.user-card-bottom{
+    border-top: black 1px solid;
+    display:flex;
+    justify-content: center;
+    height: 25%;
+}
+
+.user-name{
+    width: 95%;
+}
+
+.user-bio{
+    height: 40% !important;
+    width: 95% !important;
+    align-items:initial;
+    border-top: black 2px solid;
+}
+
+.user-buttons{
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+.user-name h1{
+    margin-bottom: 0;
+}
+
+.user-notification{
+    width: 80%;
+    margin-left: 5%;
+    padding: 1rem;
+    border: rgb(112, 112, 112);
+    background-color: rgba(128, 128, 128, 0.473);
+    color: blue;
+    border-radius: 3rem;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.user-button{
+    border: black 1px solid;
+    border-radius: 1rem;
+    width: 25%;
+    height: 85% !important;
+    margin: 1rem;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-size: 3rem;
+    padding-top:1rem !important;
+}
+
+.link-p {
+    font-size: 1.25rem !important;
+    margin:0 !important;
+    padding: 0 !important;
+    
+}
+
+.user-icon{
+
+    padding: 0;
+}
+
+.user-button a{
+    text-decoration: none;
+}
+
+.number{
+    margin: 0.5rem;
+    padding-top: 0 !important;
+    font-size: 2rem;
+}
