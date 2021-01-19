@@ -20,26 +20,26 @@ function Routes(){
           {loggedIn ? <Home/> : <Login/>}
         </Route>
         <Route exact path='/categories'>
-          {loggedIn ? <Categories/> : <Login/>}
+          {loggedIn ? <Categories/> : <Redirect to='/'/>}
         </Route>
         <Route path = '/category/:id'>
-        {loggedIn ? <CategoryModelList/> : <Login/>}
+        {loggedIn ? <CategoryModelList/> : <Redirect to='/'/>}
         </Route>
         <Route exact path='/featured'>
-          {loggedIn ? <Featured/> : <Login/>}
+          {loggedIn ? <Featured/> : <Redirect to='/'/>}
         </Route>
         <Route exact path='/likes'>
-          {loggedIn ? <Liked/> : <Login/>}
+          {loggedIn ? <Liked/> : <Redirect to='/'/>}
         </Route>
         <Route exact path='/account'>
-         {loggedIn ? <AccountPage/> : <Login/>}
+         {loggedIn ? <AccountPage/> : <Redirect to='/'/>}
         </Route>
         <Route path='/model/:id'>
-          {loggedIn ? <ModelPage/> : <Login/>}
+          {loggedIn ? <ModelPage/> : <Redirect to='/'/>}
         </Route>
 
         <Route path='/search/:term'>
-          {loggedIn ? <SearchPage/> : <Login/>}
+          {loggedIn ? <SearchPage/> : <Redirect to='/'/>}
         </Route>
         <Redirect to='/'/>
     </Switch>
