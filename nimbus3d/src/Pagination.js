@@ -7,18 +7,18 @@ import './Pagination.css'
 
 function Pagination({setPage, currentPage, pages}){
 
-    if(pages===1) return null;
+    if(pages===1 || pages ===0) return null;
 
 
     let range = []
 
-    if(currentPage < pages - 5){
+    if(pages < 5 && currentPage < pages - 5){
         for (let i = currentPage; i < currentPage + 5; ++i) {
             range.push(i);
           }
     }
     else{
-        for (let i = pages - 4; i < pages ; ++i) {
+        for (let i = 1 ; i < pages ; ++i) {
             range.push(i);
           }
     }

@@ -46,7 +46,7 @@ function AccountPage(){
                             <a className='thing-link'href='https://www.thingiverse.com/thing:0/edit'><PublishTwoToneIcon className='user-icon' fontSize='inherit'/><p className='link-p'>Upload</p></a>
                         </div>
                         <div className = 'user-button'>
-                            <a className='thing-link'href={`https://www.thingiverse.com/${user.name}/designs`}><div className='link-p'><p className='number' > {user.count_of_designs}</p> Designs</div></a>
+                            <a className='thing-link'href={`/users/${user.name}`}><div className='link-p'><p className='number' > {user.count_of_designs}</p> Designs</div></a>
                         </div>
                         <div className = 'user-button'>
                             <a className='thing-link'href={`https://www.thingiverse.com/${user.name}/followers`}><p className='number' > {user.count_of_followers}</p><p className='link-p'>Followers</p></a>
