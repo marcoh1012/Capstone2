@@ -8,7 +8,7 @@ import './Navbar.css'
 
 function Navbar(){
     return (
-    <AppBar position="static">
+    <AppBar position="static" style={{marginBottom:'2rem'}}>
       <Toolbar>
         <Container maxWidth={false} className='navbarContainer'>
           <IconButton edge="start" color="inherit" aria-label="home" href='/'>
