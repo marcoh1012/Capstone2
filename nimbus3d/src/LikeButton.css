@@ -7,4 +7,7 @@
     text-align: center;
     align-items: center;
     justify-items: center;
+    background-color: rgba(66, 64, 64, 0.548) !important;
+    color: white !important;
+    border-radius: 1rem;
 }

@@ -66,7 +66,7 @@ function Home(){
     }
     
     return (
-       <>
+       <div className='home'>
         <h2>Welcome!!</h2>
         <div className='home-buttons'>
             <Button onClick={handleClick7}>Popular Last 7 Days</Button>
@@ -80,7 +80,7 @@ function Home(){
             currentPage = {currentPage}
             setPage = {handleSetPage}
             pages = {Math.ceil(total/30)}/>
-        </>
+        </div>
     )
 
 }

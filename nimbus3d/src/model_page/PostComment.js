@@ -33,7 +33,8 @@ function PostComment({id}){
                 rows={4}
                 defaultValue={form.comment}
                 variant="outlined"
-                onChange={handleChange} />
+                onChange={handleChange} 
+               />
                 <Button className='post-comment-button' onClick={handlePostComment}> POST </Button>
         </form>
 </div>

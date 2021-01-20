@@ -25,7 +25,7 @@ function ModelCard({thing}){
         <Card className='model-card' onMouseEnter={handleHover} onMouseLeave={handleHoverClose}  >
             <div className="model-card-icons"><LikeButton thing={thing}/><p className="num-likes"></p></div>
             <Link to={`/model/${thing.id}`}>
-            <CardMedia className='model-card-img' component='img' image={thing.preview_image} style={{backgroundSize:'contain'}}/>
+            <CardMedia className='model-card-img' component='img' image={thing.preview_image} style={{height:'100%'}}/>
             <CardContent className="model-card-content model-title" style={{display: hover}}>
                 <h3>{thing.name}</h3>
             </CardContent>

@@ -1,3 +1,10 @@
 .home-buttons{
     text-decoration: underline;
 }
+
+.home{
+    color: white;
+}
+.MuiButton-label{
+ color: white;
+}
