@@ -33,3 +33,7 @@
 .likes-button{
     text-align: center;
 }
+
+.action_buttons div:hover{
+    background-color: blue !important;
+}

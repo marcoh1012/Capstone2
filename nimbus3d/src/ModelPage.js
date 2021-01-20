@@ -36,6 +36,8 @@ function ModelPage(){
     let files = useSelector(st => st.models.files)
 
     let user_info = useSelector(st => st.users.info)
+    // let settings = model.details_parts[1].data[0];
+    // console.log(settings)
 
     if(user_info === undefined){
         dispatch(get_user_info())
@@ -91,7 +93,15 @@ function ModelPage(){
                 <div><Button className='view-more-icon' title="View More" href={`/users/${model.creator.name}`}>VIEW MORE</Button></div>
             </div>
             <div className='summary'>
-                <div dangerouslySetInnerHTML={{__html: model.details}}></div>
+                <h2>Summary:</h2>
+                <div dangerouslySetInnerHTML={{__html: model.details_parts[0].data[0].content}}></div>
+                <h2>Settings:</h2>
+                {Object.keys(model.details_parts[1].data[0]).map( setting => (
+                    <div style={{display: 'block', marginBottom: '1rem'}}>
+                    <h4><strong style={{textTransform:'uppercase'}}>{setting}:</strong></h4>
+                    <p>{model.details_parts[1].data[0][setting]}</p>
+                    </div>
+                ))}
 
             <div className='files' id='files'>
                 <h1>Files </h1>
