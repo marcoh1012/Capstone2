@@ -16,30 +16,33 @@ function Routes(){
     const loggedIn = useSelector(st => st.auth['access_token'] !== undefined);
     return(
     <Switch>
+        <Route exact path='/login'>
+          {loggedIn ? <Redirect to='/'/> : <Login/>}
+        </Route>
         <Route exact path='/'> 
-          {loggedIn ? <Home/> : <Login/>}
+          {loggedIn ? <Home loggedIn={loggedIn}/> : <Redirect to='/login'/>}
         </Route>
         <Route exact path='/categories'>
-          {loggedIn ? <Categories/> : <Redirect to='/'/>}
+          {loggedIn ? <Categories/> : <Redirect to='/login'/>}
         </Route>
         <Route path = '/category/:id'>
-        {loggedIn ? <CategoryModelList/> : <Redirect to='/'/>}
+        {loggedIn ? <CategoryModelList/> : <Redirect to='/login'/>}
         </Route>
         <Route exact path='/featured'>
-          {loggedIn ? <Featured/> : <Redirect to='/'/>}
+          {loggedIn ? <Featured/> : <Redirect to='/login'/>}
         </Route>
         <Route exact path='/likes'>
-          {loggedIn ? <Liked/> : <Redirect to='/'/>}
+          {loggedIn ? <Liked/> : <Redirect to='/login'/>}
         </Route>
         <Route exact path='/account'>
-         {loggedIn ? <AccountPage/> : <Redirect to='/'/>}
+         {loggedIn ? <AccountPage/> : <Redirect to='/login'/>}
         </Route>
         <Route path='/model/:id'>
-          {loggedIn ? <ModelPage/> : <Redirect to='/'/>}
+          {loggedIn ? <ModelPage/> : <Redirect to='/login'/>}
         </Route>
 
         <Route path='/search/:term'>
-          {loggedIn ? <SearchPage/> : <Redirect to='/'/>}
+          {loggedIn ? <SearchPage/> : <Redirect to='/login'/>}
         </Route>
         <Redirect to='/'/>
     </Switch>

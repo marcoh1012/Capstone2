@@ -3,8 +3,16 @@ import LoginButton from './LoginButton'
 import logo from './pics/nimbus.png'
 
 import './Login.css'
+import { Redirect } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 function Login(){
+    const loggedIn = useSelector(st => st.auth['access_token'] !== undefined);
+
+    if (loggedIn) return(
+        <Redirect to='/'/>
+    )
+
 
     return (
         <div className='login-page'>

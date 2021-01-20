@@ -23,11 +23,11 @@ function Home(){
         dispatch(get_user_info())
     }
 
-
     useEffect(function(){
         dispatch(get_things(days,currentPage));
         dispatch(get_liked());
     },[days, currentPage, dispatch])
+
     
     const handleClick7 = () => {
         dispatch(set_days(7));
@@ -57,6 +57,7 @@ function Home(){
         dispatch(set_page(num))
         dispatch(get_things(days,num))
     }
+
     
     if(!loaded){
         return(

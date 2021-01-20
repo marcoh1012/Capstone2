@@ -4,9 +4,12 @@ import axios from 'axios';
 const BASE_URL = "https://api.thingiverse.com"
 
 class ThingiverseApi {
-    static async request(endpoint, paramsOrData = {}, verb = "get") {
+    static async request(endpoint, paramsOrData = {}, verb ="get") {
       let auth = JSON.parse(window.localStorage.getItem('persist:root')).auth
+
       let access_token = JSON.parse(auth).access_token
+
+      if(access_token === undefined) window.location.href='/';
       
     // paramsOrData._token = token
 
@@ -16,7 +19,7 @@ class ThingiverseApi {
       // "3RpbmciLCJpc19hZG1pbiI6ZmFsc2UsImlhdCI6MTU1MzcwMzE1M30." +
       // "COmFETEsTxN_VfIlgIKw0bYJLkvbRQNgO1XCSE8NZ0U");
   
-      console.log("API Call:", endpoint, paramsOrData, verb);
+      console.log("API Call:", endpoint, paramsOrData, verb, access_token);
   
       try {
         return (await axios({
@@ -94,9 +97,7 @@ class ThingiverseApi {
 
     static async getComments(id){
       //get all comments from model
-      console.log(id)
       let res = await this.request(`things/${id}/comments`)
-      console.log(res)
       return res
     }
 

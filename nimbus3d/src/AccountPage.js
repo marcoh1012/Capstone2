@@ -11,10 +11,11 @@ function AccountPage(){
     const dispatch = useDispatch()
     let loaded = useSelector(st => st.users.info !== undefined)
     const user = useSelector(st => st.users.info)
+    const token = useSelector(st => st.users.access_token)
 
     useEffect(function(){
         dispatch(get_user_info());
-    },[dispatch])
+    },[token, dispatch])
 
     if(!loaded) return <CircularProgress/>
 
@@ -42,19 +43,19 @@ function AccountPage(){
                     </div>
                     <div className='user-card-bottom'>
                         <div className = 'user-button'>
-                            <a classname='thing-link'href='https://www.thingiverse.com/thing:0/edit'><PublishTwoToneIcon className='user-icon' fontSize='inherit'/><p className='link-p'>Upload</p></a>
+                            <a className='thing-link'href='https://www.thingiverse.com/thing:0/edit'><PublishTwoToneIcon className='user-icon' fontSize='inherit'/><p className='link-p'>Upload</p></a>
                         </div>
                         <div className = 'user-button'>
-                            <a classname='thing-link'href={`https://www.thingiverse.com/${user.name}/designs`}><p className='link-p'><p className='number' > {user.count_of_designs}</p> Designs</p></a>
+                            <a className='thing-link'href={`https://www.thingiverse.com/${user.name}/designs`}><div className='link-p'><p className='number' > {user.count_of_designs}</p> Designs</div></a>
                         </div>
                         <div className = 'user-button'>
-                            <a classname='thing-link'href={`https://www.thingiverse.com/${user.name}/followers`}><p className='number' > {user.count_of_followers}</p><p className='link-p'>Followers</p></a>
+                            <a className='thing-link'href={`https://www.thingiverse.com/${user.name}/followers`}><p className='number' > {user.count_of_followers}</p><p className='link-p'>Followers</p></a>
                         </div>
                         <div className = 'user-button'>
-                            <a classname='thing-link'href={`https://www.thingiverse.com/${user.name}/following`}><p className='number' > {user.count_of_following}</p><p className='link-p'>Following</p></a>
+                            <a className='thing-link'href={`https://www.thingiverse.com/${user.name}/following`}><p className='number' > {user.count_of_following}</p><p className='link-p'>Following</p></a>
                         </div>
                         <div className = 'user-button'>
-                            <a classname='thing-link'href='/likes'><p className='number' > {user.like_count}</p><p className='link-p'>Likes</p></a>
+                            <a className='thing-link'href='/likes'><p className='number' > {user.like_count}</p><p className='link-p'>Likes</p></a>
                         </div>
                     </div>
             </Card>

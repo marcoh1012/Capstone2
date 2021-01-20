@@ -6,16 +6,18 @@ import { LogIn } from "./actions/auth";
 
 import './LoginButton.css'
 import { get_user_info } from './actions/user';
+import { useHistory } from 'react-router-dom';
  
 
 
 function LoginButton(){
 const dispatch = useDispatch();
+const history = useHistory()
 
 const onSuccess = response => logIn(response.access_token);
 const onFailure = response => console.error(response);
 
-function logIn(token) {
+ function  logIn(token) {
     dispatch(LogIn(token))
     dispatch(get_user_info())
 }
@@ -25,7 +27,7 @@ function logIn(token) {
         authorizationUrl={authURL}
         responseType="token"
         clientId={clientID}
-        redirectUri="http://localhost:3000/"
+        redirectUri="http://localhost:3000/home"
         onSuccess={onSuccess}
         onFailure={onFailure}
     />)
