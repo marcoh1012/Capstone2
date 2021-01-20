@@ -156,9 +156,14 @@ class ThingiverseApi {
       return res
     }
 
-    static async getUser(username){
+    static async getUser(username,page){
       let user = await this.request(`users/${username}`)
-      let things = await this.request(`users/${username}/things`)
+      let things = await this.request(`users/${username}/things`,{
+        page:page,
+        per_page:30,
+        sort: 'popular',
+        type: 'thing'
+      })
 
       return {user, things}
     }

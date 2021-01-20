@@ -15,9 +15,9 @@ function get_user_info(){
   }
 }
 
-function get_user(username){
+function get_user(username, page=1){
   return async function(dispatch){
-    const res = await ThingiverseApi.getUser(username);
+    const res = await ThingiverseApi.getUser(username,page);
     dispatch(got_user(res))
   }
 }
