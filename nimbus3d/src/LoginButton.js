@@ -6,13 +6,11 @@ import { LogIn } from "./actions/auth";
 
 import './LoginButton.css'
 import { get_user_info } from './actions/user';
-import { useHistory } from 'react-router-dom';
  
 
 
 function LoginButton(){
 const dispatch = useDispatch();
-const history = useHistory()
 
 const onSuccess = response => logIn(response.access_token);
 const onFailure = response => console.error(response);
