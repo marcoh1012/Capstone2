@@ -145,8 +145,14 @@ class ThingiverseApi {
       let res = await this.request(`things/${id}/package-url`)
       return res.public_url
     }
+
     static async downloadFile(id){
       let res = await this.request(`files/${id}/download`)
+      return res
+    }
+
+    static async getImages(id){
+      let res = await this.request(`things/${id}/images`)
       return res
     }
 

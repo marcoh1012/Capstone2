@@ -1,4 +1,4 @@
-import { DELETE_COMMENT, GET_COMMENTS, GET_FILES, GET_MODEL, LIKE_MODEL, POST_COMMENT, UNLIKE_MODEL } from "./types";
+import { DELETE_COMMENT, GET_COMMENTS, GET_FILES, GET_IMAGES, GET_MODEL, LIKE_MODEL, POST_COMMENT, UNLIKE_MODEL } from "./types";
 import ThingiverseApi from "../ThingiverseApi"
 
 function get_model(id) {
@@ -63,6 +63,13 @@ function delete_comment(id){
 
 }
 
+function get_images(id){
+  return async function(dispatch){
+    const res = await ThingiverseApi.getImages(id)
+    dispatch(got_images(res))
+  }
+}
+
 
 
 function got_model(data){
@@ -94,5 +101,9 @@ function deleted_comment(id){
   return {type: DELETE_COMMENT, payload: id}
 }
 
+function got_images(images){
+  return {type: GET_IMAGES, payload: images}
+}
 
-export {get_model, like_model, unlike_model, get_files, get_comments, post_comment, delete_comment}
+
+export {get_model, like_model, unlike_model, get_files, get_comments, post_comment, delete_comment, get_images}

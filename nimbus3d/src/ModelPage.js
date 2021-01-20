@@ -7,7 +7,7 @@ import GetAppIcon from '@material-ui/icons/GetApp';
 import FileCopyIcon from '@material-ui/icons/FileCopy';
 import ChatBubbleIcon from '@material-ui/icons/ChatBubble';
 import LinkIcon from '@material-ui/icons/Link';
-import Carousel from './Carousel'
+import Images from './model_page/Images'
 import DownloadFiles from "./model_page/DownloadFiles";
 import DownloadingModal from "./model_page/DownloadingModal"
 
@@ -78,7 +78,7 @@ function ModelPage(){
             <p>By: {model.creator.name}</p>
             <div className="model-img">
                 {/* img src={model.thumbnail} alt='model'></img> */}
-                <Carousel img={model.thumbnail}/>
+                <Images id={id}/>
             </div>
             <div className='action_buttons'>
                 <div className='likes-button'><LikeButton thing={model}/></div>

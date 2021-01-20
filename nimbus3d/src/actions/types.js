@@ -13,6 +13,7 @@ export const GET_FILES = "GET_FILES"
 export const GET_COMMENTS = "GET_COMMENTS"
 export const POST_COMMENT = "POST_COMMENT"
 export const DELETE_COMMENT = 'DELETE_COMMENT'
+export const GET_IMAGES = "GET_IMAGES"
 
 //Category Types
 export const GET_CATEGORIES = "GET_CATEGORIES"
