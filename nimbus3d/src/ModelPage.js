@@ -88,7 +88,7 @@ function ModelPage(){
                 <div><CopyToClipboard text={`localhost:3000/model/${model.id}`}>
                      <Button className='copy-link-icon' title="Copy-Link"><LinkIcon/></Button>
                      </CopyToClipboard></div>
-                <div><Button className='view-more-icon' title="View More">VIEW MORE</Button></div>
+                <div><Button className='view-more-icon' title="View More" href={`/users/${model.creator.name}`}>VIEW MORE</Button></div>
             </div>
             <div className='summary'>
                 <div dangerouslySetInnerHTML={{__html: model.details}}></div>

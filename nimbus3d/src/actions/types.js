@@ -26,3 +26,4 @@ export const SET_DAYS = "SET_DAYS"
 
 //User Types
 export const USER_INFO = 'USER_INFO'
+export const GET_USER  = 'GET_USER'

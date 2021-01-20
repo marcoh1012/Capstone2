@@ -10,6 +10,7 @@ import { useSelector } from "react-redux";
 import Login  from "./Login";
 import SearchPage from './SearchPage';
 import AccountPage from './AccountPage';
+import UserPage from './UserPage'
 
 
 function Routes(){
@@ -40,7 +41,9 @@ function Routes(){
         <Route path='/model/:id'>
           {loggedIn ? <ModelPage/> : <Redirect to='/login'/>}
         </Route>
-
+        <Route path='/users/:username'>
+            {loggedIn ? <UserPage/> : <Redirect to='/login'/>}
+        </Route>
         <Route path='/search/:term'>
           {loggedIn ? <SearchPage/> : <Redirect to='/login'/>}
         </Route>

@@ -156,6 +156,13 @@ class ThingiverseApi {
       return res
     }
 
+    static async getUser(username){
+      let user = await this.request(`users/${username}`)
+      let things = await this.request(`users/${username}/things`)
+
+      return {user, things}
+    }
+
   }
 
 

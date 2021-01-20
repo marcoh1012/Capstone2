@@ -1,4 +1,4 @@
-import {GET_LIKED, LIKE_MODEL, LOG_IN, LOG_OUT, UNLIKE_MODEL, USER_INFO} from "../actions/types";
+import {GET_LIKED, GET_USER, LIKE_MODEL, LOG_IN, LOG_OUT, UNLIKE_MODEL, USER_INFO} from "../actions/types";
 
 
 const INITIAL_STATE = {};
@@ -31,6 +31,12 @@ function users(state = INITIAL_STATE, action) {
       case USER_INFO:
         return{...state, 
           info: {...action.payload}
+        }
+
+      case GET_USER:
+        return{...state,
+          user: {...action.payload.user},
+          user_things: [...action.payload.things]
         }
 
       default:
