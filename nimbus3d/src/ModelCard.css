@@ -5,10 +5,10 @@
 }
 
 .model-card{
-    min-width: 25rem;
-    min-height: 19rem;
-    max-width: 25rem;
-    max-height: 25rem;
+    min-width: 15rem;
+    min-height: 15rem;
+    max-width: 20rem;
+    max-height: 20rem;
     margin: 2rem;
     border-radius: 1rem !important;
     border: 2px black solid;

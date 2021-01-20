@@ -7,20 +7,26 @@ import './Pagination.css'
 
 function Pagination({setPage, currentPage, pages}){
 
-    if(pages===1 || pages ===0) return null;
+    if(pages===1 || pages === 0) return null;
 
 
     let range = []
-
-    if(pages < 5 && currentPage < pages - 5){
-        for (let i = currentPage; i < currentPage + 5; ++i) {
-            range.push(i);
-          }
+    if (pages > 5){
+        if(currentPage < pages - 5){
+            for (let i = currentPage; i < currentPage + 5; ++i) {
+                range.push(i);
+              }
+        }
+        else{
+            for (let i = pages - 4; i < pages + 4; ++i) {
+                range.push(i);
+              }
+        }
     }
     else{
-        for (let i = 1 ; i < pages ; ++i) {
-            range.push(i);
-          }
+        for(let i = 1; i < pages; i++){
+            range.push(i)
+        }
     }
 
     const clickLastPage = ev => {
