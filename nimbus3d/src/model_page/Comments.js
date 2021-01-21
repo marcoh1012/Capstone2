@@ -22,10 +22,11 @@ function Comments({id, username}){
     if(comments === undefined ||comments.length === 0 ) return (<div><p>No Comments</p> <PostComment id={id}/></div>)
     return (
         <div className="model-comments">
-            {comments.map(comment => { 
+            {comments.slice(0,15).map(comment => { 
                 const deleteComment = () => {
                    dispatch(delete_comment(comment.id))
                 } 
+                if(comment.user === null) return '';
 
                 return(
                 <Card className='CommentCard' key={comment.id}>

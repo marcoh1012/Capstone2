@@ -68,6 +68,18 @@ function ModelPage(){
         
         setDownloading(false)
     }
+
+    const settings = () => {
+        let keys = Object.keys(model.details_parts[1].data[0])
+        return (
+            keys.map( setting => (
+                <div style={{display: 'block', marginBottom: '1rem'}}>
+                <h4><strong style={{textTransform:'uppercase'}}>{setting}:</strong></h4>
+                <p>{model.details_parts[1].data[0][setting]}</p>
+                </div>
+            ))
+        )
+    }
     
     if(!loaded){
         return(
@@ -95,13 +107,11 @@ function ModelPage(){
             <div className='summary'>
                 <h2>Summary:</h2>
                 <div dangerouslySetInnerHTML={{__html: model.details_parts[0].data[0].content}}></div>
-                <h2>Settings:</h2>
-                {Object.keys(model.details_parts[1].data[0]).map( setting => (
-                    <div style={{display: 'block', marginBottom: '1rem'}}>
-                    <h4><strong style={{textTransform:'uppercase'}}>{setting}:</strong></h4>
-                    <p>{model.details_parts[1].data[0][setting]}</p>
-                    </div>
-                ))}
+                { model.details_parts[1].data !== undefined? (
+                    <h2>Settings:</h2>): ""}
+                { model.details_parts[1].data !== undefined? (
+                    settings()): ""}
+                
 
             <div className='files' id='files'>
                 <h1>Files </h1>

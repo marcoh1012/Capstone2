@@ -45,7 +45,7 @@ class ThingiverseApi {
       return res
     }
 
-    static async getAll(handle,page=1 ,days=7){
+    static async getAll(handle,page=1 ,days=3){
       let res = await this.request('search',{
         page:page,
         per_page:30,

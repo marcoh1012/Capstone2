@@ -24,7 +24,6 @@ function Home(){
     }
 
     useEffect(function(){
-        dispatch(set_days(3))
         dispatch(get_things(days,currentPage));
         dispatch(get_liked());
     },[days, currentPage, dispatch])
