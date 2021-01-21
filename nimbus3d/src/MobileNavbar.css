@@ -1,0 +1,33 @@
+.navbar-drawer .navLinks{
+    background-color: #3f50b5;
+}
+
+.mobile-search{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    background-color:#3f50b5;
+    padding-bottom: 1rem;
+
+}
+.mobile-search input{
+    background: transparent;
+}
+
+
+.mobile-links .navLinks{
+    display: block !important;
+}
+
+.mobile-menu-icon{
+    
+    position: relative;
+    float: right;
+}
+
+.mobile-links .MuiListItemText-root{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
