@@ -31,10 +31,10 @@ function Featured(){
     }
     
     return (
-       <>
+       <div style={{color:'white'}}>
         <h2>Featured</h2>
         <ModelList things={things}/>
-        </>
+        </div>
     )
 
 }

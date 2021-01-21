@@ -23,9 +23,10 @@ function  CategoryCard({category}) {
     return (
         <div className='category-card'>
             <div>
-                <CardMedia className='model-card-img' component='img' image={category_data.thumbnail}/>
+                <CardMedia className='model-card-img' component='img' image={category_data.preview_image} style={{height:'100%' , width:'100%',  borderRadius: '1rem'}}/>
+                <div className='category-title'> <p>{category.name}</p><p>{category.count} Models</p></div>
             </div>
-            <div className='category-title'> <p>{category.name}</p><p>{category.count} Models</p></div>
+            
         </div>
     )
 

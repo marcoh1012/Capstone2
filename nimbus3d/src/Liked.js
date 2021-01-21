@@ -21,10 +21,10 @@ function Featured(){
     }
     
     return (
-       <>
+       <div style={{color:'white'}}>
         <h2>Likes</h2>
         <ModelList things={things}/>
-        </>
+        </div>
     )
 
 }

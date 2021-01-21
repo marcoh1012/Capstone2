@@ -11,7 +11,7 @@ function  Logout() {
     }
     
     return(
-        <Button onClick={logout}>
+        <Button variant="contained" color="primary"  style={{marginLeft: "1rem"}}onClick={logout}>
             Log Out
         </Button>
     )

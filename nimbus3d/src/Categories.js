@@ -23,10 +23,10 @@ function Home(){
     }
     
     return (
-       <>
+       <div style={{color:'white'}}>
         <h3>Categories</h3>
         <CategoryList categories={categories}/>
-        </>
+        </div>
     )
 
 }

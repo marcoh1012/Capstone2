@@ -28,14 +28,15 @@ function AccountPage(){
                             <div >
                             <h1>{user.full_name} ({user.name})</h1>
                             <div className='user-buttons'>
-                                <Button href={`https://www.thingiverse.com/${user.name}/edit`}> Edit Profile</Button>
-                                <Logout/>
+                                <Button variant="contained" color="primary" className='edit-page-button' href={`https://www.thingiverse.com/${user.name}/edit`}> Edit Profile</Button>
+                                <Logout />
                             </div>
                             </div>
                             <div className='user-bio'>
                                 <h4>Bio:</h4>
                                 <div dangerouslySetInnerHTML={{__html: user.bio_html}}></div>
                             </div>
+                            
                             <div className="user-notification">
                                 ****Work in Progress: Editing Profile, Uploading Models, Editing Models, Following and Followers features are done through the <a href='https://thingiverse.com'>thingiverse</a> site. ****
                             </div>
